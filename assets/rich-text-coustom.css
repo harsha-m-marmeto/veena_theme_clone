@@ -1,0 +1,45 @@
+.rich-text-coustom .main_title h2{
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 52px;
+}
+.rich-text-coustom .pre_title{
+    font-size: 1.6rem;
+    letter-spacing: 0.08rem;
+}
+
+.btn-animate {
+    position: relative;
+    overflow: hidden;
+    /* z-index: 2; */
+}
+
+.btn-animate::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.btn-animate:hover::before {
+    background-color: black;
+    width: 100%; 
+    transform: translateX(0);
+}
+
+@media (max-width: 750px) {
+    .rich-text-coustom .main_title h2{
+        font-size: 30px;
+        margin-top: 10px; 
+    }
+
+    .rich-text-coustom .pre_title {
+        font-size: 1.6rem; 
+    }
+}
+

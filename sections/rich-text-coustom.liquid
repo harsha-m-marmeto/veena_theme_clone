@@ -1,0 +1,180 @@
+{{ 'rich-text-coustom.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .rich-text-coustom__text-container-{{section.id}}{
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  .rich-text-coustom__pre_title-{{ section.id }}{
+    color: {{ section.settings.pre_title_color }};
+  }
+
+  .rich-text-coustom__main_title-{{ section.id }},h2{
+    color: {{ section.settings.main_title_color }};
+  }
+
+  .rich-text-coustom__button-{{ section.id }}{
+    color: {{ section.settings.button_color }};
+    background-color: {{ section.settings.button_bg }};
+  }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class='rich-text-coustom'>
+            <div class="rich-text-coustom__text-container-{{section.id}} ">
+                {% if section.settings.pre_title != blank %}
+                    <div class='h1 rich-text-coustom__pre_title-{{ section.id }} pre_title'>{{ section.settings.pre_title }}</div>
+                {%  endif %}
+                {% if section.settings.main_title != blank %}
+                    <div class='h1 rich-text-coustom__main_title-{{ section.id }} main_title'>{{ section.settings.main_title }}</div>
+                {%  endif %}
+                {% if section.settings.button_text != blank %}
+                    <a
+                        {% if section.settings.button_link == blank %}
+                        role="link" aria-disabled="true"
+                        {% else %}
+                        href="{{ section.settings.button_link }}"
+                        {% endif %}
+                        class="btn-animate rich-text-coustom__button-{{ section.id }} button"
+                    >
+                        {{- section.settings.button_text | escape -}}
+                    </a>
+                {%  endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rich text coustom",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Customize color_scheme",
+      "default": "scheme-1"
+    },
+    {
+        "type": "header",
+        "content": "Customize text settings"
+    },
+    {
+        "type": "text",
+        "id": "pre_title",
+        "label": "Pre heading",
+        "default": "Quick links"
+    },
+    {
+        "type": "color",
+        "id": "pre_title_color",
+        "label": "Pre heading color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "richtext",
+        "id": "main_title",
+        "label": "Heading"
+    },
+    {
+        "type": "color",
+        "id": "main_title_color",
+        "label": "Heading color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "default": "center",
+        "options": [
+            {
+                "label": "Center",
+                "value": "center"
+            },
+            {
+                "label": "Left",
+                "value": "left"
+            },
+            {
+                "label": "Right",
+                "value": "right"
+            }
+        ]
+    },
+    {
+        "type": "header",
+        "content": "Customize button settings"
+    },
+    {
+        "type": "text",
+        "label": "Button Text",
+        "id": "button_text",
+        "default": "Click me"
+    },
+    {
+        "type": "url",
+        "label": "Button Link",
+        "id": "button_link"
+    },
+    {
+        "type": "color",
+        "id": "button_bg",
+        "label": "Button background",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button color",
+        "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Customize section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich text coustom"
+    }
+  ]
+}
+{% endschema %}

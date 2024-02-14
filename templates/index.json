@@ -66,10 +66,77 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "hero_banner_slider_bPWhdt": {
+      "type": "hero-banner-slider",
+      "blocks": {
+        "slide_TgDNTf": {
+          "type": "slide",
+          "settings": {
+            "imageHero_desktop": "shopify:\/\/shop_images\/1.webp",
+            "heading": "Women's Apparel",
+            "heading_color": "#ffffff",
+            "main_heading": "<h2>Elevate your wardrobe with our <a href=\"https:\/\/veena-theme-fashion.myshopify.com\/collections\" title=\"All collections\">limited-time<\/a> fashion offer!<\/h2>",
+            "main_heading_color": "#ffffff",
+            "button_text": "Explore More",
+            "button_link": "#",
+            "button_bg": "#ffffff",
+            "button_color": "#000000",
+            "content_alignment": "justify-center align-center",
+            "text_alignment": "center"
+          }
+        },
+        "slide_qVWt9m": {
+          "type": "slide",
+          "settings": {
+            "imageHero_desktop": "shopify:\/\/shop_images\/4.webp",
+            "heading": "Trendy Classics",
+            "heading_color": "#ffffff",
+            "main_heading": "<h2>Discover Signature Look: Fashion Forward and Fabulous!<\/h2>",
+            "main_heading_color": "#ffffff",
+            "button_text": "Shop Now",
+            "button_link": "#",
+            "button_bg": "#ffffff",
+            "button_color": "#000000",
+            "content_alignment": "justify-start align-center",
+            "text_alignment": "center"
+          }
+        },
+        "slide_E4fRMG": {
+          "type": "slide",
+          "settings": {
+            "imageHero_desktop": "shopify:\/\/shop_images\/3.webp",
+            "heading": "Modern Elegance",
+            "heading_color": "#ffffff",
+            "main_heading": "<h2>Step into the World of Style with the Latest Fashion Trends Unveiled!<\/h2>",
+            "main_heading_color": "#ffffff",
+            "button_text": "Explore Now",
+            "button_link": "",
+            "button_bg": "#ffffff",
+            "button_color": "#000000",
+            "content_alignment": "justify-start align-center",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_TgDNTf",
+        "slide_qVWt9m",
+        "slide_E4fRMG"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "enable_dots": true,
+        "enable_arrows": true,
+        "slide_animation": "slide",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "hero_banner_slider_bPWhdt"
   ]
 }

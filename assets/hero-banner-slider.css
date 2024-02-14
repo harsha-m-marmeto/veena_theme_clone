@@ -1,0 +1,25 @@
+.bnr_caption {
+    border-radius: 16px;
+    padding: 0 13px 0 30px;
+    list-style: disc;
+    display: inline-block;
+    vertical-align: middle;
+    word-break: break-word;
+    margin-bottom: 10px;
+}
+
+.hero-banner-slider__li{
+    display: flex;
+}
+
+.hero-banner-slider .hero-banner-slider__text-wrapper{
+    position:absolute;
+    top:0px;
+    Left:0px;
+    /* border:solid 2px blue; */
+    height:100%;
+    width:100%;
+    display: flex;
+    /* align-items: flex-end;
+    justify-content: center; */
+}

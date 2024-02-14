@@ -1,0 +1,319 @@
+{{ 'splide.min.css' | asset_url | stylesheet_tag }}
+{{ 'hero-banner-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ "splide.min.js" | asset_url }}" defer></script>
+<script src="{{ "custom-splide.js" | asset_url }}" defer></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .hero-banner-slider__banner-{{ section.id }}{
+    position:relative;
+  }
+  
+  {%  for block in section.blocks %}
+    .hero-banner-slider__text-{{ section.id }}{
+        text-align:{{ block.settings.text_alignment }};
+        max-width: 53.5rem;
+        margin-bottom:10px;
+        padding:20px 35px;
+    }
+    .hero-banner-slider__text-main_heading-{{ block.id }}{
+        color:{{ block.settings.main_heading_color }};
+    }
+    .hero-banner-slider__text-main_heading-{{ block.id }} h2{
+        color:{{ block.settings.main_heading_color }};
+    }
+    .hero-banner-slider__text-heading-{{ block.id }}{
+        color:{{ block.settings.heading_color }};
+    }
+    .hero-banner-slider__text-heading-border-{{ block.id }}{
+        color:{{ block.settings.heading_color }};
+        border: 1px solid {{ block.settings.heading_color }};
+    }
+    .hero-banner-slider__text-button-{{ block.id }}{
+        color:{{ block.settings.button_color }};
+        background:{{ block.settings.button_bg }};
+    }
+  {% endfor %}
+
+{%- endstyle -%}
+
+{% capture options %}
+  "autoplay": {{ section.settings.enable_autoplay }},
+  "pagination": {{ section.settings.enable_dots }},
+  "arrows": {{ section.settings.enable_arrows }},
+  "type": "{{ section.settings.slide_animation }}",
+  "perPage": 1,
+  "gap": 24
+{% endcapture %}
+
+<div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class='hero-banner-slider'>
+            <custom-splide data-splide='{ {{ options }} }'>
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% if section.blocks.size > 0 %}
+                              {% for block in section.blocks %}
+                                <li class="splide__slide hero-banner-slider__li">
+                                  <div class='hero-banner-slider__banner-{{ section.id }}'>
+                                    {% if block.settings.imageHero_desktop != blank %}
+                                      {% render 'responsive-image', desktopImage: block.settings.imageHero_desktop %}
+                                    {% endif %}
+                                  </div>
+                                  <div class='hero-banner-slider__text-wrapper {{ block.settings.content_alignment }}'>
+                                    <div class='hero-banner-slider__text-{{ section.id }}'>
+                                        <ul class="bnr_caption hero-banner-slider__text-heading-border-{{ block.id }}">
+                                          {% if block.settings.heading != blank %}
+                                            <li class='hero-banner-slider__text-heading-{{ block.id }}'>{{ block.settings.heading }}</li>
+                                          {% endif %}
+                                        </ul>
+                                        <div class='h1 hero-banner-slider__text-main_heading-{{ block.id }}'>{{ block.settings.main_heading }}</div>
+                                        <a href="/collections" target="_blank" class="hero-banner-slider__text-button-{{ block.id }} button">
+                                          {% if block.settings.button_text != blank %}
+                                            <span>{{ block.settings.button_text }}</span>
+                                          {% endif %}
+                                        </a>
+                                      </div>
+                                  </div>
+                                </li>
+                              {% endfor %}
+                            {% else %}
+                              {% for i in (1..2) %}
+                                <li class="splide__slide">
+                                  <div class="media media--square">
+                                    {{ 'product-' | append: i | placeholder_svg_tag }}
+                                  </div>
+                                </li>
+                              {% endfor %}
+                            {% endif %}                            
+                        </ul>
+                    </div>
+                </section>
+            </custom-splide>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "hero-banner-slider",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Customize Slider settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_dots",
+      "label": "Enable dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_arrows",
+      "label": "Enable arrows",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "slide_animation",
+      "label": "Slide animation",
+      "options": [
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "loop",
+          "label": "Loop"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "header",
+      "content": "Customize section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Click on add slide to customize this section"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imageHero_desktop",
+          "label": "Banner Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageHero_mobile",
+          "label": "Banner Image Mobile"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Initial heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "richtext",
+          "id": "main_heading",
+          "label": "Main Heading"
+        },
+        {
+          "type": "color",
+          "id": "main_heading_color",
+          "label": "Main heading color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "label": "Button Text",
+          "id": "button_text",
+          "default": "Click me"
+        },
+        {
+          "type": "url",
+          "label": "Button Link",
+          "id": "button_link"
+        },
+        {
+          "type": "color",
+          "id": "button_bg",
+          "label": "Button background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button color",
+          "default": "#000000"
+        },
+        {
+            "type": "select",
+            "id": "content_alignment",
+            "label": "Content alignment",
+            "default": "justify-center align-center",
+            "options": [
+                {
+                    "label": "Left Top",
+                    "value": "justify-start align-start"
+                },
+                {
+                    "label": "Left Center",
+                    "value": "justify-start align-center"
+                },
+                {
+                    "label": "Left Bottom",
+                    "value": "justify-start align-end"
+                },
+                {
+                    "label": "Middle Top",
+                    "value": "justify-center align-start"
+                },
+                {
+                    "label": "Middle Center",
+                    "value": "justify-center align-center"
+                },
+                {
+                    "label": "Middle Bottom",
+                    "value": "justify-center align-end"
+                },
+                {
+                    "label": "Right Top",
+                    "value": "justify-end align-start"
+                },
+                {
+                    "label": "Right Center",
+                    "value": "justify-end align-center"
+                },
+                {
+                    "label": "Right Bottom",
+                    "value": "justify-end align-end"
+                }
+            ]
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "center",
+          "options": [
+              {
+                  "label": "Center",
+                  "value": "center"
+              },
+              {
+                  "label": "Left",
+                  "value": "left"
+              },
+              {
+                  "label": "Right",
+                  "value": "right"
+              }
+          ]
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "hero-banner-slider"
+    }
+  ]
+}
+{% endschema %}

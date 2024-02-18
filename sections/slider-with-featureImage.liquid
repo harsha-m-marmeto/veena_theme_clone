@@ -1,0 +1,209 @@
+{% style %}
+  .padding-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+  }
+
+  @media (min-width: 750px) {
+    .padding-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%  endstyle %}
+
+<div class="slider-with-featureImage padding-{{ section.id }}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+      <h2 class="">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div>
+      <div class="">
+        {% if section.settings.feature_pre_heading != blank %}
+          <ul class="bnr_caption slider-with-featuerImage__text-heading-border-{{ section.id }}">
+            {% if section.settings.feature_pre_heading != blank %}
+              <li class='hero-banner-slider__text-heading-{{ section.id }}'>{{ section.settings.feature_pre_heading }}</li>
+            {% endif %}
+          </ul>
+        {% endif %}
+        {% if section.settings.feature_main_heading != blank %}
+          <div>{{ section.settings.feature_main_heading }}</div>
+        {% endif %}
+        <a href="/collections" target="_blank" class="button">
+          {% if section.settings.feature_button_text != blank %}
+            <span>{{ section.settings.feature_button_text }}</span>
+          {% endif %}
+        </a>
+      </div>
+      <div class="grid grid--1-col grid--2-col-tablet grid--5-col-desktop">
+        {% for product in section.settings.product_list %}
+          <div class="grid__item">
+            {% comment %} {% render '', product: product, section_id: section.id %} {% endcomment %}
+          </div>
+        {% else %}
+          {% for i in (1..5) %}
+            <div class="grid__item">
+              <div class="media media--square">
+                {{ 'product-' | append: i | placeholder_svg_tag }}
+              </div>
+            </div>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%  schema %}
+{
+  "name": "Slider with featureImage",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Customize Heading and button"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "label": "Button Text",
+      "id": "button_text",
+      "default": "Click me"
+    },
+    {
+      "type": "url",
+      "label": "Button Link",
+      "id": "button_link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#000000"
+    },
+    {
+        "type": "product_list",
+        "id": "product_list",
+        "label": "Products",
+        "limit": 12
+    },
+    {
+        "type": "checkbox",
+        "id": "show_slider",
+        "label": "Show slider",
+        "default": true
+    },
+    {
+        "type": "header",
+        "content": "Customize feature image"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_feature_image",
+        "label": "Show feature image",
+        "default": true
+    },
+    {
+        "type": "image_picker",
+        "id": "featureimage_desktop",
+        "label": "Banner Image Desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "featureimage_mobile",
+        "label": "Banner Image Mobile"
+      },
+      {
+        "type": "text",
+        "id": "feature_pre_heading",
+        "label": "Feature pre heading"
+      },
+      {
+        "type": "color",
+        "id": "feature_pre_heading_color",
+        "label": "Feature pre heading",
+        "default": "#ffffff"
+      },
+      {
+        "type": "richtext",
+        "id": "feature_main_heading",
+        "label": "Feature Main Heading"
+      },
+      {
+        "type": "color",
+        "id": "feature_main_heading_color",
+        "label": "Feature main heading color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "label": "Feature Button Text",
+        "id": "feature_button_text",
+        "default": "Click me"
+      },
+      {
+        "type": "url",
+        "label": "Feature Button Link",
+        "id": "feature_button_link"
+      },
+      {
+        "type": "color",
+        "id": "feature_button_bg",
+        "label": "Feature Button background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "feature_button_color",
+        "label": "feature Button color",
+        "default": "#000000"
+      },      
+    {
+      "type": "header",
+      "content": "Customize section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider with featureImage"
+    }
+  ]
+}
+{%  endschema %}

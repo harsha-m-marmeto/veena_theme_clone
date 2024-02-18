@@ -1,0 +1,41 @@
+.product-card__title{
+    text-decoration: none;
+}
+.product-card__info{
+    text-align: center;
+}
+
+.product-card__inventory-green{
+    color: #008a00;
+}
+.product-card__inventory-red{
+    color: #ff0000;
+}
+
+input{
+    background-color: #ff0000;
+}
+
+.product-card__varient-color {
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px; 
+    display: inline-block; 
+    margin-right: 5px;
+}
+
+.product-card{
+    background-color: #008a00;
+    color: #ffffff;
+    border-radius: 20px;
+}
+
+.product-card_newBadge{
+    background-color: #22750e;
+    color: #ffffff;
+}
+.product-card_discountBadge{
+    background-color: #dd1d1d;
+    color: #ffffff;
+}
+

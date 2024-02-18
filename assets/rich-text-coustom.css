@@ -26,6 +26,10 @@
     transform: translateX(-100%);
 }
 
+.rich-text-coustom__button_text{
+    z-index: 2;
+}
+
 .btn-animate:hover::before {
     background-color: black;
     width: 100%; 

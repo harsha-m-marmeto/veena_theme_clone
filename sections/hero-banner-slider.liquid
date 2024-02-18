@@ -16,10 +16,6 @@
     }
   }
 
-  .hero-banner-slider__banner-{{ section.id }}{
-    position:relative;
-  }
-  
   {%  for block in section.blocks %}
     .hero-banner-slider__text-{{ section.id }}{
         text-align:{{ block.settings.text_alignment }};
@@ -33,6 +29,7 @@
     .hero-banner-slider__text-main_heading-{{ block.id }} h2{
         color:{{ block.settings.main_heading_color }};
     }
+
     .hero-banner-slider__text-heading-{{ block.id }}{
         color:{{ block.settings.heading_color }};
     }
@@ -43,6 +40,7 @@
     .hero-banner-slider__text-button-{{ block.id }}{
         color:{{ block.settings.button_color }};
         background:{{ block.settings.button_bg }};
+        overflow:hidden;
     }
   {% endfor %}
 
@@ -67,11 +65,9 @@
                             {% if section.blocks.size > 0 %}
                               {% for block in section.blocks %}
                                 <li class="splide__slide hero-banner-slider__li">
-                                  <div class='hero-banner-slider__banner-{{ section.id }}'>
-                                    {% if block.settings.imageHero_desktop != blank %}
-                                      {% render 'responsive-image', desktopImage: block.settings.imageHero_desktop %}
-                                    {% endif %}
-                                  </div>
+                                  {% if block.settings.imageHero_desktop != blank %}
+                                    {% render 'responsive-image', desktopImage: block.settings.imageHero_desktop,class:'' %}
+                                  {% endif %}
                                   <div class='hero-banner-slider__text-wrapper {{ block.settings.content_alignment }}'>
                                     <div class='hero-banner-slider__text-{{ section.id }}'>
                                         <ul class="bnr_caption hero-banner-slider__text-heading-border-{{ block.id }}">
@@ -79,8 +75,8 @@
                                             <li class='hero-banner-slider__text-heading-{{ block.id }}'>{{ block.settings.heading }}</li>
                                           {% endif %}
                                         </ul>
-                                        <div class='h1 hero-banner-slider__text-main_heading-{{ block.id }}'>{{ block.settings.main_heading }}</div>
-                                        <a href="/collections" target="_blank" class="hero-banner-slider__text-button-{{ block.id }} button">
+                                        <div class='h1 hyperLink hero-banner-slider__text-main_heading-{{ block.id }}'>{{ block.settings.main_heading }}</div>
+                                        <a href="/collections" target="_blank" class="hero-banner-slider__text-button-{{ block.id }} button hero-banner-slider__hover">
                                           {% if block.settings.button_text != blank %}
                                             <span>{{ block.settings.button_text }}</span>
                                           {% endif %}

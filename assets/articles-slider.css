@@ -1,0 +1,132 @@
+.articles-slider__li{
+    display: flex;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+@media screen and (max-width: 750px) {
+    .articles-slider__li{
+        margin-bottom: 10px;
+    }
+}
+
+.articles-slider__li img{
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.articles-slider__li:hover img{
+    transform: scale(1.1);
+}
+
+
+.articles-slider__tags{
+    display: flex;
+}
+
+.articles-slider__tag{
+    color: #d03c3f;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.articles-slider__image{
+  width: 100%; 
+}
+
+.articles-slider__image picture{
+  border-radius: 16px;
+}
+.articles-slider__textWraper{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.articles-slider__title {
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.articles-slider__info {
+    margin: 8px 0px;
+    line-height: normal;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.articles-slider__content{
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: #000000;
+}
+
+.articles-slider hr{
+    margin: 0px;
+}
+
+.articles-slider__flex{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-top: 0.66px;
+}
+
+.articles-slider__flex a {
+    line-height: normal;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.articles-slider__flex a:hover {
+    color: #d03c3f;
+}
+
+.articles-slider__date{
+    line-height: normal;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.articles-slider__titles{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+
+.btn-animate::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.btn-animate span{
+    z-index: 2;
+}
+
+.btn-animate:hover::before {
+    background-color: #d03c3f;
+    width: 100%; 
+    transform: translateX(0);
+}

@@ -1,0 +1,199 @@
+{{ 'articles-slider.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+  }
+
+  @media (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+{%  endstyle %}
+
+{% capture options %}
+  "autoplay": {{ section.settings.enable_autoplay }},
+  "pagination": {{ section.settings.enable_dots }},
+  "arrows": {{ section.settings.enable_arrows }},
+  "type": "{{ section.settings.slide_animation }}",
+  "perPage": 2,
+  "gap": 24,
+"breakpoints": {
+    "750": {
+      "destroy": true,
+      "perPage": 2
+    }
+  }
+{% endcapture %}
+{{ blog.articles }}
+<div class="section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class='articles-slider'>
+          <div class='articles-slider__titles'>
+            <div class="heading h2 h0">{{ section.settings.section_heading }}</div>
+            <a
+              {% if section.settings.section_button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.section_button_link }}"
+              {% endif %}
+              class="button btn-animate"
+            >
+              <span>{{- section.settings.button_text | escape -}}</span>
+            </a>
+          </div>
+            <custom-splide data-splide='{ {{ options }} }'>
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% if section.settings.blog.articles.size > 0 %}
+                              {% for eachArticle in section.settings.blog.articles %}
+                                <li class="splide__slide articles-slider__li">
+                                  <a href="#" target="_blank" class='articles-slider__image'>
+                                    {% render 'responsive-image', desktopImage: eachArticle.image,class:'media media--square' %}
+                                  </a>
+                                  <div class='articles-slider__textWraper'>
+                                    <div>
+                                        <div class='articles-slider__tags'>
+                                            <a href="#" target="_blank" class="articles-slider__tag"><span>{{ eachArticle.tags[0] }}</span></a>
+                                            <a href="#" target="_blank" class="articles-slider__tag"><span>{{ eachArticle.tags[1] }}</span></a>
+                                        </div>
+                                        <a href="#" target="_blank" class='h2 articles-slider__title'><span>{{ eachArticle.title }}</span></a>
+                                        <div class='articles-slider__info'>Publish by: {{ eachArticle.author }}</div>
+                                        <div class='articles-slider__content'>{{ eachArticle.excerpt }}</div>
+                                    </div>
+                                    <div>
+                                        <hr>
+                                        <div class='articles-slider__flex'>
+                                            <a href="/collections" target="_blank" class="">
+                                                {% if section.settings.button_text != blank %}
+                                                <span>{{ section.settings.button_text }}</span>
+                                                {% endif %}
+                                            </a>
+                                            <div class='articles-slider__date'>{{ eachArticle.published_at | date: "%B %d, %Y" }}</div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              {% endfor %}
+                            {% else %}
+                              {% for i in (1..2) %}
+                                <li class="splide__slide">
+                                  <div class="media media--square">
+                                    {{ 'product-' | append: i | placeholder_svg_tag }}
+                                  </div>
+                                </li>
+                              {% endfor %}
+                            {% endif %}                            
+                        </ul>
+                    </div>
+                </section>
+            </custom-splide>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+      "name": "Article slider",
+      "tag": "section",
+      "settings": [
+         {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blogs"
+        },
+        {
+          "type": "text",
+          "id": "section_heading",
+          "label": "Section heading",
+          "default": "Let You Know"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Section button text",
+          "default": "View All"
+        },
+        {
+          "type": "url",
+          "id": "section_button_link",
+          "label": "Section button link"
+        },
+        {
+          "type" : "header",
+          "content" : "Slider settings"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_autoplay",
+            "label": "Enable autoplay",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_dots",
+            "label": "Enable dots",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_arrows",
+            "label": "Enable arrows",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "slide_animation",
+            "label": "Slide animation",
+            "options": [
+              {
+                "value": "slide",
+                "label": "Slide"
+              },
+              {
+                "value": "loop",
+                "label": "Loop"
+              },
+              {
+                "value": "fade",
+                "label": "Fade"
+              }
+            ],
+            "default": "slide"
+          },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+      ],
+      "presets": [
+         {
+           "name": "Article slider"
+         }
+      ]
+    }
+  {% endschema %}

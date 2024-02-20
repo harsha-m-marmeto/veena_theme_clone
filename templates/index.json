@@ -104,11 +104,27 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "articles_slider_3MYKaF": {
+      "type": "articles-slider",
+      "settings": {
+        "blog": "veena",
+        "section_heading": "Let You Know",
+        "button_text": "View All",
+        "section_button_link": "#",
+        "enable_autoplay": true,
+        "enable_dots": false,
+        "enable_arrows": true,
+        "slide_animation": "slide",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "hero_banner_slider_bPWhdt",
     "rich_text_coustom_jzdGmd",
-    "custom_collections_CTNWnm"
+    "custom_collections_CTNWnm",
+    "articles_slider_3MYKaF"
   ]
 }

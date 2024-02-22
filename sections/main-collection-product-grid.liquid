@@ -277,8 +277,8 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
-                    card_product: product,
+                  {% render 'product-card',
+                    product: product,
                     section_id: section.id
                   %}
                 </li>

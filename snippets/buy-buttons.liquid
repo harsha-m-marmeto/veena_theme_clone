@@ -88,7 +88,7 @@
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
               {%- else -%}
-                {{ 'products.product.add_to_cart' | t }}
+                {{ 'products.product.add_to_cart' | t }} {{ product.selected_or_first_available_variant.price }}
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}
@@ -113,6 +113,58 @@
       </div>
     </div>
   {%- endif -%}
+
+  <div class='paymentIcons'>
+    <style>
+      .icon {
+        width: 3.125em;
+      }
+      .visuallyhidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+      }
+
+      .paymentIcons{
+        display:flex;
+        border: solid 1px #f5f5f5;
+        align-items:center;
+        justify-content:space-between;
+      }
+
+      .secFlex{
+       display:flex;
+       list-style:none;
+       margin:0px;
+       padding: 10px 0px;
+      }
+
+      .paymentIcons{
+        margin:0px;
+       padding:0px;
+      }
+     
+      </style>
+      
+      {%- unless shop.enabled_payment_types == empty -%}
+        <span class="">Supported payment methods</span>
+      <div>
+        <ul class='secFlex'>
+          {%- for type in shop.enabled_payment_types -%}
+            <li>
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endunless -%}
+  </div>
 
   {%- if show_pickup_availability -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}

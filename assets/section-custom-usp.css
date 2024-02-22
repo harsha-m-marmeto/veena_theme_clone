@@ -1,0 +1,41 @@
+.custom-usp__wrapper {
+  padding: 20px;
+}
+
+.grid__item--content-container {
+  text-align: center;
+}
+
+.grid__usp-heading {
+  margin: 0 0 6px;
+}
+
+.grid__item--content-container:hover svg {
+  transition: transform 0.5s ease;
+  transform: scaleX(-1);
+}
+
+.grid__item--content-container:not(hover) svg {
+  transition: transform 0.5s ease;
+  transform: scaleX(1);
+}
+
+.grid__item--image-container {
+  padding-bottom: 15px;
+}
+
+.grid__usp-description p {
+  font-size: 12px;
+  margin: 0 0 10px;
+  line-height: normal;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-usp__wrapper {
+    padding: 40px 0;
+  }
+
+  .grid__usp-description p {
+    font-size: 14px;
+  }
+}

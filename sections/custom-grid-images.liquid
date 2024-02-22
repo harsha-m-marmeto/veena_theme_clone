@@ -1,0 +1,180 @@
+
+{{'section-custom-grid-images.css' |  asset_url |  stylesheet_tag}}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .coustom-grid-images__button-{{ section.id }}{
+    color: {{ section.settings.button_color }};
+    background-color: {{ section.settings.button_bg }};
+  }
+{%- endstyle -%}
+<div class="custom-grid-images section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class="grid grid--1-col grid--2-col-desktop">
+            {% for block in section.blocks %}
+                <div class="grid__item grid-item--container">
+                    {% if block.settings.desktop_image != blank %}
+                        <div class="grid-item__grid-image-container">
+                            {%  render 'responsive-image',
+                                mobileImage: block.settings.mobile_image,
+                                desktopImage: block.settings.desktop_image
+                            %}
+                        </div>
+                    {% else %}
+                        <div>
+                            {{'hero-apparel-1' |  placeholder_svg_tag}}
+                        </div>
+                    {% endif %}
+                    <div class="grid-item__grid-content-container">
+                        <div class="grid-item__content-wraper {{block.settings.text_alignment}}">
+                            <ul class="grid-item__grid-pre-text-list">
+                                <li class="grid-item__grid-pre-text">{{block.settings.pre_text}}</li>
+                            </ul>
+                            <h3 class="grid-item__grid-heading h1">{{block.settings.title}}</h3>
+                            {% if block.settings.button_text != blank %}
+                                <a
+                                    {% if block.settings.button_link == blank %}
+                                    role="link" aria-disabled="true"
+                                    {% else %}
+                                    href="{{ block.settings.button_link }}"
+                                    {% endif %}
+                                    class="btn-animate coustom-grid-images__button-{{ section.id }} button"
+                                >
+                                    <span class='rich-text-coustom__button_text'>{{- block.settings.button_text | escape -}}</span>
+                                </a>
+                            {%  endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% schema %}
+{
+    "name": "Custom grid images",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section padding details"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 20
+        }
+    ],
+    "blocks": [
+        {
+            "name": "Image grid",
+            "type": "image_grid",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Grid image details"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "mobile_image",
+                    "label": "Image (Mobile)"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "desktop_image",
+                    "label": "Image (Desktop)"
+                },
+                {
+                    "type": "header",
+                    "content": "Grid content details"
+                },
+                {
+                    "type": "text",
+                    "id": "pre_text",
+                    "label": "Pre text",
+                    "default": "Pre text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "<p>Title</p>"
+                },
+                {
+                    "type": "select",
+                    "id": "text_alignment",
+                    "label": "Text alignment",
+                    "default": "text-left",
+                    "options": [
+                        {
+                            "label": "Left",
+                            "value": "text-left"
+                        },
+                        {
+                            "label": "Center",
+                            "value": "text-center"
+                        },
+                        {
+                            "label": "Right",
+                            "value": "text-end"
+                        }
+                        
+                    ]
+                },
+                {
+                    "type": "header",
+                    "content": "Slide button details"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button text",
+                    "default": "Button text"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button link",
+                    "default": "/collections"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom grid images"
+        }
+    ]
+}
+{% endschema %}

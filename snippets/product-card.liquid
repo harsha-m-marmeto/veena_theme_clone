@@ -1,7 +1,3 @@
-{{ 'product-card.css' | asset_url |stylesheet_tag }}
-{% comment %} {{ 'component-rating.css' | asset_url |stylesheet_tag }} {% endcomment %}
-<script src="{{ 'product-card.js' | asset_url }}" defer></script>
-
 
 {% liquid
   assign current_variant = product.selected_or_first_available_variant
@@ -9,7 +5,7 @@
   assign secondary_image = product.images[1] | default: product.featured_image
 %}
 
-<product-card>
+<product-card data-product-handle = "{{ product.handle }}" data-section-id="{{ product.id }}" class="">
     <div>
         <a href="{{ product.url }}"  class="">
         <div class="media media--portrait media--transparent media--hover-effect global-media-settings">
@@ -100,14 +96,16 @@
                         {% if product_option.name == 'Color'  %}
                             <ul>
                             {% for option_value in product_option.values %}
-                                <input
+                                <input class=''
                                     id="{{ option_value }}"
                                     type="radio" 
                                     name="option-{{ product_option.name | handleize }}" 
                                     value="{{ option_value }}"
                                     {% if product_option.selected_value == option_value %}checked{% endif %}
                                 >
-                                <label for="{{ option_value }}" class='product-card__varient-color' style="background-color: {{ option_value }};"></label>
+                                <label for="{{ option_value }}" class="product-card__borderColor">
+                                  <span class='product-card__varient-color' style="background-color: {{ option_value }};"></span>
+                                </label>
                                 {% comment %} {{ option_value }} {% endcomment %}
                             {% endfor %}
                             </ul>
@@ -163,4 +161,7 @@
             </div>
         </div>
     </div>
+    <script>
+      {{ product.variants | json }}
+    </script>
 </product-card>

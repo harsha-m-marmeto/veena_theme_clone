@@ -88,3 +88,12 @@
 .visual-display--presentation-swatch .visual-display__image {
   object-fit: cover;
 }
+
+
+/* for color swatches */
+.facet-checkbox__color{
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+  border-radius: 50%;
+}

@@ -12,8 +12,8 @@
     color: #ff0000;
 }
 
-input{
-    background-color: #ff0000;
+.product-card__input{
+    display: none;
 }
 
 .product-card__varient-color {
@@ -22,6 +22,10 @@ input{
     height: 30px; 
     display: inline-block; 
     margin-right: 5px;
+}
+.product-card__varient-color:hover {
+    box-shadow: 0 0 0 3px white inset;
+    border: 1px solid red;
 }
 
 .product-card{
@@ -38,4 +42,3 @@ input{
     background-color: #dd1d1d;
     color: #ffffff;
 }
-

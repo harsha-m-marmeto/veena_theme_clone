@@ -176,28 +176,46 @@
           data-id="{{ section.id }}"
         >
           {% comment %} adding dropdown {% endcomment %}
-<ul class="parent">
-  {% for link in linklists.collection-menu.links %}
-  <li><a href="{{ link.url }}">{{ link.title }}</a>
-  {% if link.links != blank %}
-    <ul class="child">
-      {% for child_link in link.links %}  
-      <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
-      {% if child_link.links != blank %}
-        <ul class="grandchild">
-        {% for grandchild_link in child_link.links %}  
-          <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
-        {% endfor %}
+        <ul class="parent">
+          {% for link in linklists.collection-menu.links %}
+            <details>
+              {% if link.links != blank %}
+                <summary>{{ link.title |link_to:link.url }} 
+                <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                </svg>
+              </summary>
+                {% else %}
+                <summary>{{ link.title |link_to:link.url }}</summary>
+              {% endif %}
+              {% for sub_link in link.links %}
+              <details>
+                {% if sub_link.links != blank %}
+                  <summary>{{ sub_link.title |link_to:sub_link.url }} 
+                  <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                  </svg>
+                </summary>
+                  {% else %}
+                  <summary>{{ sub_link.title |link_to:sub_link.url }} </summary>
+                {% endif %}
+                  {% for sub_sub_link in sub_link.links %}
+                    {% if sub_sub_link.links != blank %}
+                      <summary>{{ sub_sub_link.title |link_to:sub_sub_link.url }} 
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                      </svg>
+                    </summary>
+                      {% else %}
+                      <summary>{{ sub_sub_link.title |link_to:sub_sub_link.url }} </summary>
+                    {% endif %}
+                  {% endfor %}
+              </details>
+              {% endfor %} 
+            </details>
+          {% endfor %}
         </ul>
-      {% endif %}   
-      </li>
-      {% endfor %}
-    </ul> 
-  {% endif %} 
-  </li>
-  {% endfor %}
-  </ul>
-  
+
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,
@@ -231,9 +249,11 @@
           </div>
         {%- else -%}
 
-        <button class='button' id='product-grid-2'>2 column</button>
-        <button class='button' id='product-grid-1'>1 column</button>
-        
+        {% comment %} <form> {% endcomment %}
+        <button class='button layout-button' id='product-grid-3' data-col=3>3 column</button>
+        <button class='button layout-button' id='product-grid-2' data-col=2>2 column</button>
+        <button class='button layout-button' id='product-grid-1' data-col=1>1 column</button>
+        {% comment %} </form> {% endcomment %}
 
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
@@ -259,13 +279,6 @@
                 >
                   {% render 'card-product',
                     card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    show_quick_add: section.settings.enable_quick_add,
                     section_id: section.id
                   %}
                 </li>
@@ -490,13 +503,13 @@
   ]
 }
 {% endschema %}
-
+{% comment %} 
 <script>
 var productGrid = document.querySelector('#product-grid');
 const colTwo = document.querySelector('#product-grid-2');
 const colThree = document.querySelector('#product-grid-1');
 
-  colThree.onclick= ()=>{
+  colThree.onclick= (event)=>{
     console.log('hafss')
   // Iterate over the classList and replace the class ending with "desktop"
   productGrid.classList.forEach(function(className) {
@@ -507,4 +520,22 @@ const colThree = document.querySelector('#product-grid-1');
     }
   });
 }
+</script> {% endcomment %}
+
+<script>
+  let productGrid = document.querySelector('#product-grid');
+  let buttonList = document.querySelectorAll('.layout-button');
+  // console.log(buttonList)
+  buttonList.forEach(each=>{
+    // console.log(each)
+    each.addEventListener('click', event => {
+      productGrid.classList.forEach(function(className) {
+        if (className.endsWith('desktop')) {
+          // Replace the class name
+          // console.log(each.dataset.col)
+          productGrid.classList.replace(className, `grid--${each.dataset.col}-col-desktop`);
+        }
+      });
+    })
+  })
 </script>

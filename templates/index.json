@@ -142,6 +142,66 @@
         "padding_bottom": 52
       }
     },
+    "custom_featured_brands_GHhdFw": {
+      "type": "custom-featured-brands",
+      "blocks": {
+        "featured_brands_pKNkHU": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_cd395017-1471-444b-a792-aee354390d67.webp"
+          }
+        },
+        "featured_brands_enyU3C": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_26caca81-ef1b-413a-b2e8-dacb4042a47f.webp"
+          }
+        },
+        "featured_brands_YQ47ij": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_526ac6af-9bcf-4f5a-a1f0-3b004c6d93b3.webp"
+          }
+        },
+        "featured_brands_i7BJLA": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_1.webp"
+          }
+        },
+        "featured_brands_WRnPTm": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_2.webp"
+          }
+        },
+        "featured_brands_XBj66h": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8.webp"
+          }
+        },
+        "featured_brands_4H97mi": {
+          "type": "featured-brands",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7_1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "featured_brands_pKNkHU",
+        "featured_brands_enyU3C",
+        "featured_brands_YQ47ij",
+        "featured_brands_i7BJLA",
+        "featured_brands_WRnPTm",
+        "featured_brands_XBj66h",
+        "featured_brands_4H97mi"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "articles_slider_3MYKaF": {
       "type": "articles-slider",
       "settings": {
@@ -163,6 +223,7 @@
     "rich_text_coustom_jzdGmd",
     "custom_grid_images_cXVwH9",
     "custom_collections_CTNWnm",
+    "custom_featured_brands_GHhdFw",
     "articles_slider_3MYKaF"
   ]
 }

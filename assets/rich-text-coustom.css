@@ -8,32 +8,9 @@
     letter-spacing: 0.08rem;
 }
 
-.btn-animate {
-    position: relative;
-    overflow: hidden;
-    /* z-index: 2; */
-}
-
-.btn-animate::before {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    color: #fff;
-    transition: all 0.3s ease;
-    transform: translateX(-100%);
-}
 
 .rich-text-coustom__button_text{
     z-index: 2;
-}
-
-.btn-animate:hover::before {
-    background-color: black;
-    width: 100%; 
-    transform: translateX(0);
 }
 
 @media (max-width: 750px) {

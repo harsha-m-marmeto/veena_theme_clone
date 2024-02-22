@@ -3741,3 +3741,29 @@ img{
   width: 100%; 
   transform: translateX(0);
 }
+
+
+.btn-animateRed {
+  position: relative;
+  overflow: hidden;
+  /* z-index: 2; */
+}
+
+.btn-animateRed::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+}
+
+
+.btn-animateRed:hover::before {
+  background-color: black;
+  width: 100%; 
+  transform: translateX(0);
+}

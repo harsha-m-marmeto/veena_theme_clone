@@ -1,0 +1,132 @@
+.grid__look-item-image-container {
+  position: relative;
+}
+
+.grid__look-item-image-container img {
+  border-radius: 16px;
+}
+
+.grid__look-book-dot {
+  position: absolute;
+  top: 0;
+}
+
+.grid__look-book-dot::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #ffffff;
+  border-radius: 100%;
+  transition: 0.3s ease;
+  left: 3px;
+  top: 3px;
+}
+
+.grid__look-book-dot:hover::before,
+.grid__look-book-dot:hover::after {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.grid__look-book-dot::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000000;
+  border-radius: 100%;
+  top: 11px;
+  left: 11px;
+  transition: 0.3s ease;
+}
+
+.grid__look-book-product {
+  position: relative;
+  left: 70px;
+  top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 3px;
+  max-width: 98px;
+  text-align: center;
+  display: none;
+  opacity: 0;
+}
+
+.look-book-product__title {
+  font-size: 13px;
+  color: #000000;
+  line-height: normal;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.look-book-product_price {
+  color: #000000;
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.look-book-product__compare-at-price {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  color: #00000080;
+}
+
+.grid__look-book-product img {
+  border-radius: 12px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.look-book-product__content {
+  margin-left: 5px;
+}
+
+.grid__look-item-heading {
+  text-transform: capitalize;
+  margin: 0 0 5px;
+}
+
+.grid__look-item-description p {
+  font-size: 14px;
+  line-height: normal;
+  margin: 0 0 10px;
+}
+
+@media screen and (min-width: 750px) {
+  .grid__look-item-heading {
+    font-size: 26px;
+  }
+
+  .grid__look-book-product {
+    flex-direction: row;
+    max-width: 180px;
+    padding: 6px;
+    text-align: left;
+    display: none;
+  }
+
+  .grid__look-book-product img {
+    width: 30%;
+  }
+
+  .look-book-product__title {
+    font-size: 14px;
+  }
+
+  .look-book-product_price {
+    font-size: 16px;
+  }
+
+  .grid__look-item-description p {
+    font-size: 18px;
+    margin: 0 0 20px;
+  }
+}

@@ -16,6 +16,8 @@
     picker_type: picker_type
   %}
 {% endcomment %}
+
+
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'
@@ -83,12 +85,14 @@
       help_text: label_unavailable
     %}
   {%- elsif picker_type == 'button' -%}
+  {% comment %} <legend class="form__label">{{ option.name }} : {{ value }}</legend> {% endcomment %}
     <input
       type="radio"
       id="{{ input_id }}"
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
+      class="selcetedVarientChecker"
       {% if option.selected_value == value %}
         checked
       {% endif %}
@@ -96,10 +100,27 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ input_id }}">
+    {% comment %} <label for="{{ input_id }}">
       {{ value -}}
       {{ label_unavailable }}
-    </label>
+    </label> {% endcomment %}
+    
+    {% assign optionName = option.name | handleize %}
+    <label for="{{ input_id }}"
+      {% if  optionName  == "color" %} 
+         class="product-variant-options__color-swatch" style = "background-color: {{ value }}" 
+      {%  endif %}  
+     >
+     {% if  optionName  != "color" %}
+       {{ value | slice: 0, 1 -}} 
+       {{ label_unavailable }}
+   {%  endif %}
+     <span {% if option_disabled %}
+           class="product-variant-options__line-through"
+       {% endif %}  >
+     </span>
+   </label>
+
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       value="{{ value | escape }}"
@@ -118,3 +139,45 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+
+
+<style>
+  .product-variant-options__color-swatch{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    {% comment %} box-shadow: 0 0 0 3px #f5f5f5 inset; {% endcomment %}
+    border: 1px solid white;
+  }
+
+  .product-variant-options__color-swatch-selected{
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 0 3px #f5f5f5 inset;
+    border: 1px solid white;
+  }
+
+  .selcetedVarientChecker:checked+ label{
+    box-shadow: 0 0 0 3px #f5f5f5 inset;
+    border: 1px solid white;
+  }
+
+  .product-variant-options__line-through {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 12px;
+    transform: rotate(45deg);
+    border: none;
+    border-left: 1px solid rgba(var(--color-foreground));
+    opacity: 0.8;
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    height: auto;
+    margin: 1px;
+  }
+</style>

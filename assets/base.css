@@ -3672,10 +3672,10 @@ details-disclosure > details {
   left: auto;
 }
 
-img{
+/* img{
   width: 100%;
   height: auto;
-}
+} */
 
 /* for 9 positins */
 .justify-start {
@@ -3766,4 +3766,31 @@ img{
   background-color: black;
   width: 100%; 
   transform: translateX(0);
+}
+
+.btn-animateWhite {
+  position: relative;
+  overflow: hidden;
+  /* z-index: 2; */
+}
+
+.btn-animateWhite::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.btn-animateWhite:hover::before {
+  background-color: #fff;
+  width: 100%; 
+  transform: translateX(0);
+}
+
+.btn-animateWhite:hover span{
+  color: #d03c3f;
 }

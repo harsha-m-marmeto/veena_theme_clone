@@ -3664,6 +3664,7 @@ details-disclosure > details {
 
 .custom-hover-text a:hover::before {
   width: 100%;
+  text-decoration: underline;
 }
 
 .custom-hover-text a:not(:hover)::before {

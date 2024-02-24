@@ -35,11 +35,15 @@
     display: flex;
 }
 
+.hero-banner-slider__li img{
+  border-radius: 16px;
+}
+
 .hero-banner-slider__hover span{
   position: relative;
   z-index: 3;
 }
-.hero-banner-slider__hover span:hover{
+.hero-banner-slider__hover:hover span{
   color: #d03c3f;
 }
 

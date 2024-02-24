@@ -3768,6 +3768,11 @@ details-disclosure > details {
   transform: translateX(0);
 }
 
+.btn-animateRed:hover span{
+  /* color: #d03c3f; */
+  z-index: 3;
+}
+
 .btn-animateWhite {
   position: relative;
   overflow: hidden;
@@ -3780,6 +3785,7 @@ details-disclosure > details {
   display: block;
   top: 0;
   left: 0;
+  /* background: transparent; */
   z-index: 1;
   transition: all 0.3s ease;
   transform: translateX(-100%);
@@ -3793,4 +3799,5 @@ details-disclosure > details {
 
 .btn-animateWhite:hover span{
   color: #d03c3f;
+  z-index: 3;
 }

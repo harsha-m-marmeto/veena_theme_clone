@@ -133,6 +133,7 @@
 
 .articles-slider button.splide__arrow.splide__arrow--prev {
   background: #000000;
+  opacity: 1;
   cursor: pointer;
   left: 0;
   height: 44px;
@@ -147,10 +148,12 @@
   fill: #fff;
   height: 14px;
   width: 14px;
+  z-index:2;
 }
 
 .articles-slider button.splide__arrow.splide__arrow--next {
     background: #000000;
+    opacity: 1;
     cursor: pointer;
     right: 0;
     height: 44px;
@@ -166,4 +169,41 @@
   fill: #fff;
   height: 14px;
   width: 14px;
+  z-index:2;
+}
+
+.articles-slider  .splide__arrow--prev::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent 50%, #D03C3F 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 0 50% 50% 0;
+}
+
+.articles-slider .splide__arrow--next:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent 50%, #D03C3F 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease-in-out;
+    overflow: hidden;
+    border-radius: 50% 0 0 50%;
+}
+
+.articles-slider .splide__arrow--prev:hover::before {
+    background-position: -100% 0;
+}
+
+.articles-slider .splide__arrow--next:hover::before {
+    background-position: -100% 0;
 }

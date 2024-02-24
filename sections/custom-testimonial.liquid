@@ -1,6 +1,4 @@
 {{ "section-custom-testimonial.css" | asset_url | stylesheet_tag }}
-{% comment %} <script src="{{ "custom-slider.js" | asset_url }}" defer></script> {% endcomment %}
-
 
 {% style %}
   .padding-{{ section.id }} {
@@ -17,7 +15,6 @@
 
 {% endstyle %}
 
-
 {% capture slider-options-data %}
   {
     "autoplay" : {{ section.settings.slider_autoplay }},
@@ -26,6 +23,7 @@
     "pagination": {{ section.settings.slide_dots }},
     "gap": "20px",
     "perPage": 3,
+    "perMove": 1,
     "arrows" : {{ section.settings.slide_arrows }},
     "rewind" : {{ section.settings.infinite_scroll }},
     "breakpoints": {
@@ -36,12 +34,10 @@
   }
 {% endcapture %} 
 
-
-
 <div class="testimonial padding-{{ section.id }}">
   <div class="page-width">
-    <div class="testimonial__heading-section color-{{ section.settings.color_scheme }}">
-      <h2 class="h1 testimonial__section-heading"> {{ section.settings.section_heading }} </h2>
+    <div class="testimonial__heading-section">
+      <h2 class="h1"> {{ section.settings.section_heading }} </h2>
     </div>
     <custom-splide>
       <section class="splide" aria-label="Testimonial Splide" data-splide='{{ slider-options-data }}'>
@@ -49,7 +45,7 @@
           <ul class="splide__list">
             {% for block in section.blocks %}
               
-              <li class="splide__slide testimonial__slide global-media-settings {{ section.settings.text_alignment }} color-{{ section.settings.color_scheme }}">
+              <li class="splide__slide testimonial__slide global-media-settings {{ section.settings.text_alignment }} ">
                 {% if block.settings.image != blank %}
                   <div class="testimonial__image"> 
                   {% if  block.settings.image != blank %}
@@ -79,7 +75,6 @@
     </custom-splide>
   </div>
 </div>
-
 
 {% schema %}
   {

@@ -82,6 +82,113 @@
         "padding_bottom": 52
       }
     },
+    "custom_collections_list_CGbEAG": {
+      "type": "custom-collections-list",
+      "blocks": {
+        "collection_blocks_4UNNYg": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/6.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/6.jpg",
+            "heading": "Accessories",
+            "button_text": "View All",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#ffffff",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_qh3HQg": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/4.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/4.jpg",
+            "heading": "Men's Jacket",
+            "button_text": "Shop Now",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#ffffff",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_bRDRnB": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/1.jpg",
+            "heading": "Shoes",
+            "button_text": "Shop Now",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#ffffff",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_rrKdNV": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/hand-bag-collection.jpg",
+            "heading": "Person Name",
+            "button_text": "Shop Now",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#ffffff",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_fdRTHF": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/8.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/8.jpg",
+            "heading": "T shirt",
+            "button_text": "Shop Now",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#fff",
+            "slide_animation": "loop"
+          }
+        },
+        "collection_blocks_4GpTQw": {
+          "type": "collection-blocks",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/6.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/6.jpg",
+            "heading": "Best Selling",
+            "button_text": "View All",
+            "button_link": "#",
+            "button_bg": "rgba(0,0,0,0)",
+            "button_color": "#fff",
+            "slide_animation": "loop"
+          }
+        }
+      },
+      "block_order": [
+        "collection_blocks_4UNNYg",
+        "collection_blocks_qh3HQg",
+        "collection_blocks_bRDRnB",
+        "collection_blocks_rrKdNV",
+        "collection_blocks_fdRTHF",
+        "collection_blocks_4GpTQw"
+      ],
+      "settings": {
+        "section_heading": "Our Customers Review",
+        "section_button_text": "View All",
+        "section_button_link": "#",
+        "button_bgr": "#dd1d1d",
+        "button_colorr": "#fff",
+        "slider_autoplay": true,
+        "slide_dots": true,
+        "slide_arrows": true,
+        "infinite_scroll": false,
+        "slider_autoplay_duration": 3,
+        "text_alignment": "center",
+        "alignment_position": "align-center justify-center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "custom_grid_images_cXVwH9": {
       "type": "custom-grid-images",
       "blocks": {
@@ -398,10 +505,10 @@
       "settings": {
         "section_heading": "Our Customers Review",
         "slider_autoplay": true,
-        "slide_dots": true,
+        "slide_dots": false,
         "slide_arrows": true,
-        "infinite_scroll": true,
-        "slide_animation": "loop",
+        "infinite_scroll": false,
+        "slide_animation": "slide",
         "slider_autoplay_duration": 3000,
         "text_alignment": "center",
         "color_scheme": "",
@@ -428,6 +535,7 @@
   "order": [
     "hero_banner_slider_bPWhdt",
     "rich_text_coustom_jzdGmd",
+    "custom_collections_list_CGbEAG",
     "custom_grid_images_cXVwH9",
     "custom_collections_CTNWnm",
     "custom_usp_MH4nUL",

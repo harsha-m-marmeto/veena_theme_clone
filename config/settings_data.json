@@ -1,7 +1,7 @@
 {
   "current": {
     "logo_width": 90,
-    "type_header_font": "harmonia_sans_n4",
+    "type_header_font": "harmonia_sans_n6",
     "heading_scale": 100,
     "type_body_font": "harmonia_sans_n4",
     "body_scale": 100,
@@ -12,12 +12,12 @@
     "animations_reveal_on_scroll": true,
     "animations_hover_elements": "none",
     "buttons_border_thickness": 0,
-    "buttons_border_opacity": 100,
-    "buttons_radius": 31,
+    "buttons_border_opacity": 5,
+    "buttons_radius": 30,
     "buttons_shadow_opacity": 0,
     "buttons_shadow_horizontal_offset": 0,
-    "buttons_shadow_vertical_offset": 4,
-    "buttons_shadow_blur": 5,
+    "buttons_shadow_vertical_offset": 0,
+    "buttons_shadow_blur": 0,
     "variant_pills_border_thickness": 1,
     "variant_pills_border_opacity": 55,
     "variant_pills_radius": 40,
@@ -26,8 +26,8 @@
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
     "inputs_border_thickness": 1,
-    "inputs_border_opacity": 55,
-    "inputs_radius": 0,
+    "inputs_border_opacity": 10,
+    "inputs_radius": 30,
     "inputs_shadow_opacity": 0,
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
@@ -72,9 +72,9 @@
     "text_boxes_shadow_horizontal_offset": 0,
     "text_boxes_shadow_vertical_offset": 4,
     "text_boxes_shadow_blur": 5,
-    "media_border_thickness": 1,
+    "media_border_thickness": 0,
     "media_border_opacity": 5,
-    "media_radius": 0,
+    "media_radius": 16,
     "media_shadow_opacity": 0,
     "media_shadow_horizontal_offset": 0,
     "media_shadow_vertical_offset": 4,
@@ -128,6 +128,11 @@
         "type": "main-password-footer",
         "settings": {
           "color_scheme": "scheme-1"
+        }
+      },
+      "color-swatch": {
+        "type": "color-swatch",
+        "settings": {
         }
       }
     },

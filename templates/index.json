@@ -173,7 +173,7 @@
         "collection_blocks_4GpTQw"
       ],
       "settings": {
-        "section_heading": "Our Customers Review",
+        "section_heading": "Captivating Collection",
         "section_button_text": "View All",
         "section_button_link": "#",
         "button_bgr": "#dd1d1d",
@@ -600,6 +600,60 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "custom_faq_section_GdBFQh": {
+      "type": "custom-faq-section",
+      "blocks": {
+        "faq_with_ans_bfRbAC": {
+          "type": "faq-with-ans",
+          "settings": {
+            "block_heading": "<p> How can I track my order ?<\/p>",
+            "block_description": "Once your order has been processed and shipped, you will receive a confirmation email with a tracking number. You can use this tracking number to monitor the status and location of your package through our shipping carrier's website."
+          }
+        },
+        "faq_with_ans_Bbe6pD": {
+          "type": "faq-with-ans",
+          "settings": {
+            "block_heading": "<p>What is your return policy?<\/p>",
+            "block_description": "We offer a hassle-free return policy. If you're not completely satisfied with your purchase, you can return it within 30 days for a full refund or exchange. Please visit our Returns & Exchanges page for more details on the process and any eligibility criteria."
+          }
+        },
+        "faq_with_ans_fTaRw7": {
+          "type": "faq-with-ans",
+          "settings": {
+            "block_heading": "<p>Are the product images accurate representations of the items.<\/p>",
+            "block_description": "Yes, we strive to provide accurate and high-quality images of our products. However, please note that colors may vary slightly due to differences in monitor settings. If you have any specific questions about a product, feel free to contact our customer support team."
+          }
+        },
+        "faq_with_ans_FJfp4z": {
+          "type": "faq-with-ans",
+          "settings": {
+            "block_heading": "<p>How do I determine my size.<\/p>",
+            "block_description": "To find the right size, please refer to our detailed size guide available on each product page. Measurements may vary by product, so it's essential to check the specific sizing information provided. If you have further questions or need assistance, our customer support team is here to help."
+          }
+        },
+        "faq_with_ans_K7dVCF": {
+          "type": "faq-with-ans",
+          "settings": {
+            "block_heading": "<p>What payment methods do you accept?<\/p>",
+            "block_description": "We accept a variety of payment methods, including major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment options. During the checkout process, you can choose the payment method that suits you best."
+          }
+        }
+      },
+      "block_order": [
+        "faq_with_ans_bfRbAC",
+        "faq_with_ans_Bbe6pD",
+        "faq_with_ans_fTaRw7",
+        "faq_with_ans_FJfp4z",
+        "faq_with_ans_K7dVCF"
+      ],
+      "settings": {
+        "section_title": "<p>FAQ<\/p>",
+        "section_description": "Ensure that your FAQs are regularly updated based on common customer queries and changes in your business operations.",
+        "color_scheme": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
     }
   },
   "order": [
@@ -615,6 +669,7 @@
     "custom_featured_brands_GHhdFw",
     "custom_image_with_text_yFrcf6",
     "custom_testimonial_Dc966a",
-    "articles_slider_3MYKaF"
+    "articles_slider_3MYKaF",
+    "custom_faq_section_GdBFQh"
   ]
 }

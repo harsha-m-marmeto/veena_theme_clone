@@ -321,6 +321,94 @@
         "padding_bottom": 20
       }
     },
+    "custom_image_with_text_yFrcf6": {
+      "type": "custom-image-with-text",
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "mobile_image": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522_1.webp",
+        "desktop_image": "shopify:\/\/shop_images\/4_0d5cc573-820a-4e7b-8f22-af8438216522_1.webp",
+        "sub_text": "Introduce",
+        "title": "<p><strong>We Believe in the Power of Fashion<\/strong><\/p>",
+        "pre_sub_text": "fashion emerges as the universal language that speaks volumes without words.",
+        "content_alignment": "justify-center align-center",
+        "text_alignment": "text-center",
+        "button_text": "Show More",
+        "button_color": "#ffffff",
+        "button_text_color": "rgba(0,0,0,0)",
+        "button_link": "shopify:\/\/collections"
+      }
+    },
+    "custom_testimonial_Dc966a": {
+      "type": "custom-testimonial",
+      "blocks": {
+        "testimonia_blocks_xrYfDc": {
+          "type": "testimonia-blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_2db38707-707e-4fd6-ab12-35397e8935de.webp",
+            "heading": "Emma Watson",
+            "designation": "Fashion Blogger",
+            "comment": "<p>\"Absolutely love the trendy collection! The quality is unmatched, and each piece tells a unique style story. My followers can't get enough. His empathy, patience and expertise in fostering a positive environment is truly commendable.\"<\/p>"
+          }
+        },
+        "testimonia_blocks_UMixVJ": {
+          "type": "testimonia-blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2_0b300886-b49e-4ef1-a786-f0b7f7ab2f2d.webp",
+            "heading": "James Harper",
+            "designation": "Fashion Editor",
+            "comment": "<p>\"As a fashion editor, I've seen it all. This store stands out with its curated selection and attention to detail. The clothing is not just fashion; it's art in motion. His effective communication and ability to motivate and guide the sales team is second to none.\"<\/p>"
+          }
+        },
+        "testimonia_blocks_DbEHC6": {
+          "type": "testimonia-blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_b85a25e7-eff6-49ab-9fc7-ecdf71bb4ef1.webp",
+            "heading": "Sarah Mitchell",
+            "designation": "Stylist",
+            "comment": "<p>\"A go-to destination for my clients. The diversity in styles is impressive, catering to every taste. The quality and elegance never disappoint. Her quick response and innovative solutions make him an invaluable asset to our team.\"<\/p>"
+          }
+        },
+        "testimonia_blocks_Q743zw": {
+          "type": "testimonia-blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_e6c9abf8-cab4-4c51-8b5c-b87f6878ea97.webp",
+            "heading": "Alex Rodriguez",
+            "designation": "Fashion Enthusiast",
+            "comment": "<p>\"Being a fashion enthusiast, I'm always on the lookout for unique pieces. This store exceeds expectations with its exceptional customer service. Her attention to detail, and ability to meet deadlines have made every project a success.\"<\/p>"
+          }
+        },
+        "testimonia_blocks_nBXCVd": {
+          "type": "testimonia-blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_8692d143-4fac-48d0-9ba7-4bf86ec25a15.webp",
+            "heading": "Grace Turner",
+            "designation": "Influencer",
+            "comment": "<p>\"Obsessed with my recent purchases! The store's fashion-forward approach aligns perfectly with my style. The pieces are Instagram-worthy. His commitment to resolving issues have greatly contributed to our customer satisfaction levels.\"<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "testimonia_blocks_xrYfDc",
+        "testimonia_blocks_UMixVJ",
+        "testimonia_blocks_DbEHC6",
+        "testimonia_blocks_Q743zw",
+        "testimonia_blocks_nBXCVd"
+      ],
+      "settings": {
+        "section_heading": "Our Customers Review",
+        "slider_autoplay": true,
+        "slide_dots": true,
+        "slide_arrows": true,
+        "infinite_scroll": true,
+        "slide_animation": "loop",
+        "slider_autoplay_duration": 3000,
+        "text_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "articles_slider_3MYKaF": {
       "type": "articles-slider",
       "settings": {
@@ -345,6 +433,8 @@
     "custom_usp_MH4nUL",
     "custom_look_book_VMLxx8",
     "custom_featured_brands_GHhdFw",
+    "custom_image_with_text_yFrcf6",
+    "custom_testimonial_Dc966a",
     "articles_slider_3MYKaF"
   ]
 }

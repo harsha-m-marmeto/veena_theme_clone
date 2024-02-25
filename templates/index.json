@@ -341,12 +341,6 @@
     "custom_collections_CTNWnm": {
       "type": "custom-collections",
       "settings": {
-        "section_heading": "Featured Collection",
-        "title_color": "#000000",
-        "button_text": "See all Products",
-        "button_link": "#",
-        "button_bg": "#d03c3f",
-        "button_color": "#ffffff",
         "product_list": [
           "full-sleeve-high-neck-t-shirt",
           "full-sleeve-high-neck-t-shirt-1",
@@ -357,6 +351,9 @@
           "women-solid-casual-jacket",
           "womens-casual-jacket"
         ],
+        "section_heading": "Featured Collection",
+        "button_text": "See all Products",
+        "button_link": "#",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -536,6 +533,11 @@
         "featured_brands_4H97mi"
       ],
       "settings": {
+        "enable_autoplay": false,
+        "enable_dots": false,
+        "rewind_slides": false,
+        "enable_arrows": false,
+        "slide_animation": "loop",
         "padding_top": 20,
         "padding_bottom": 20
       }

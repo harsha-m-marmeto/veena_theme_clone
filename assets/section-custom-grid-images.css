@@ -90,3 +90,12 @@
     margin: 0 0 20px;
   }
 }
+
+/* .grid-item__grid-image-container {
+  position: relative;
+  padding-bottom: 60%;
+} */
+.grid-item__square {
+  position: relative;
+  padding-bottom: 100%;
+}

@@ -65,9 +65,6 @@
                 </div>
             {% endif %}        
         </div>
-        <div>
-            
-        </div>    
         <div class="product-card__info">
             <div class='h4'>{{ product.vendor }}</div>
             <a href="{{ product.url }}" class="product-card__title h3">{{ product.title }}</a>
@@ -79,12 +76,12 @@
             <span class="product-card__price">{{ current_variant.price | money_without_trailing_zeros }}</span>
     
             {% if current_variant.compare_at_price > current_variant.price %}
-                <s class="product-card__compareprice">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</s>
+              <s class="product-card__compareprice">{{ current_variant.compare_at_price | money_without_trailing_zeros }}</s>
             {% endif %}
             </div>
                 <div class='h4 {% if current_variant.inventory_quantity > 10 %}product-card__inventory-green{% else %}product-card__inventory-red{% endif %}'>
-                {{ current_variant.inventory_quantity }} in stock
-            </div>
+                  {{ current_variant.inventory_quantity }} in stock
+                </div>
             <div class="product-card__form">
             {% form 'product', product %}
                 <input type="hidden" name="id" value="{{ current_variant.id }}">

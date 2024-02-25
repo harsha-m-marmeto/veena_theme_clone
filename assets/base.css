@@ -1275,7 +1275,11 @@ button.shopify-payment-button__button--unbranded {
       rgba(var(--color-button-text), var(--border-opacity)),
     0 0 0 var(--buttons-border-width)
       rgba(var(--color-button), var(--alpha-button-background));
-  transition: box-shadow var(--duration-short) ease;
+  /* transition: box-shadow var(--duration-short) ease;
+  width:0%;
+  height: 100%;
+  background-color: #000;
+  transition: all var(--duration-medium) ease; */
 }
 
 .button:not([disabled]):hover::after,
@@ -1287,6 +1291,7 @@ button.shopify-payment-button__button--unbranded {
       rgba(var(--color-button-text), var(--border-opacity)),
     0 0 0 calc(var(--buttons-border-width) + 1px)
       rgba(var(--color-button), var(--alpha-button-background));
+      width: 100%;
 }
 
 .button--secondary:after {
@@ -3783,6 +3788,38 @@ details-disclosure > details {
 }
 
 .btn-animateWhite:hover span{
+  color: #d03c3f;
+  z-index: 3;
+}
+
+.btn-animateT-White {
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
+  color: black;
+  /* z-index: 2; */
+}
+
+.btn-animateT-White::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  transition: all 0.3s ease; 
+  transform: translateX(-100%);
+  display: block;
+  z-index: 1;
+}
+
+.btn-animateT-White:hover::before {
+  transform: translateX(0%);
+  z-index: 2;
+  background-color: #fff;
+}
+
+.btn-animateT-White:hover span{
   color: #d03c3f;
   z-index: 3;
 }

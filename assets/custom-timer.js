@@ -4,7 +4,7 @@ let hoursElement = document.getElementById("hours");
 let minutesElement = document.getElementById("minutes");
 let secondsElement = document.getElementById("seconds");
 let compareDate = new Date();
-compareDate.setDate(compareDate.getDate() + 183); 
+compareDate.setDate(compareDate.getDate() + parseInt(dayElement.textContent)); 
 
 timer = setInterval(function() {
   timeBetweenDates(compareDate);

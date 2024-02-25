@@ -45,7 +45,7 @@
             </div>   
             <div class="grid__item custom-timer__time-wrapper">
                 <div class = "custom-timer__card custom-border-radius">
-                    <span class = "h1 custom-timer__time" id="days" >00</span>
+                    <span class = "h1 custom-timer__time" id="days" >{{ section.settings.no_of_days }}</span>
                     <span class = "h4">Days</span>
                 </div>
                 <span class = "h1 custom-timer__colon">:</span>
@@ -130,6 +130,13 @@
           ],
           "default": "left"
         },
+        {
+          "type": "number",
+          "id": "no_of_days",
+          "label": "No of days for countdown",
+          "default": 183
+        },
+        
     {
       "type": "header",
       "content": "Adjust Section padding"

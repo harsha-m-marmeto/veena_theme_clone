@@ -14,10 +14,10 @@
     }
   }
 
-  .coustom-grid-images__button-{{ section.id }}{
+  /* .coustom-grid-images__button-{{ section.id }}{
     color: {{ section.settings.button_color }};
     background-color: {{ section.settings.button_bg }};
-  }
+  } */
 {%- endstyle -%}
 <div class="custom-grid-images section-{{ section.id }}-padding">
     <div class="page-width">
@@ -25,8 +25,11 @@
             {% for block in section.blocks %}
                 <div class="grid__item grid-item--container">
                     {% if block.settings.desktop_image != blank %}
-                        <div class="grid-item__grid-image-container">
-                            {%  render 'responsive-image',
+                        {% if  block.settings.image_portrait%}
+                            {% assign className = 'grid-item__square' %}
+                        {% endif %}
+                        <div class="grid-item__grid-image-container {{className}}">
+                            {% render 'responsive-image',
                                 mobileImage: block.settings.mobile_image,
                                 desktopImage: block.settings.desktop_image
                             %}
@@ -49,9 +52,9 @@
                                     {% else %}
                                     href="{{ block.settings.button_link }}"
                                     {% endif %}
-                                    class="btn-animateWhite coustom-grid-images__button-{{ section.id }} button"
+                                    class="btn-animateT-White coustom-grid-images__button-{{ section.id }} button"
                                 >
-                                    <span class='rich-text-coustom__button_text'>{{- block.settings.button_text | escape -}}</span>
+                                    <span class=''>{{- block.settings.button_text | escape -}}</span>
                                 </a>
                             {%  endif %}
                         </div>
@@ -114,6 +117,12 @@
                     "type": "image_picker",
                     "id": "desktop_image",
                     "label": "Image (Desktop)"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "image_portrait",
+                    "label": "Image_portrait",
+                    "default": false
                 },
                 {
                     "type": "header",

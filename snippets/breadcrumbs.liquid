@@ -28,7 +28,7 @@
 {%- unless template == 'index' or template == 'cart' or template == '404' -%}
   {%- assign template_name = template | split: '.' | first -%}
 
-  <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+  <nav class="breadcrumbs page-width" role="navigation" aria-label="breadcrumbs">
     <ol class="breadcrumbs__list">
       <li class="breadcrumbs__listitem">
         <a class="breadcrumbs__link" href="{{ routes.root_url }}" title="Home">Home</a>

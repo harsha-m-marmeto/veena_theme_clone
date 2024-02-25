@@ -35,6 +35,8 @@
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     {% section 'color-swatch' %}
+    {{ 'product-card.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'product-card.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid

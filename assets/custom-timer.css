@@ -15,8 +15,8 @@
     letter-spacing: 0.3px;
     line-height: 28.8px;
     text-align: center;
+    border-radius: 16px;
 }
 .custom-timer__time{
     font-weight: 400;
-    margin: ;
 }

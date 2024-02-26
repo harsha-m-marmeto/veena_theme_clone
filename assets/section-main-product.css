@@ -1496,3 +1496,9 @@ a.product__text {
     border: none;
   }
 }
+
+/* my stles */
+.breadcrumb {
+  padding: 15px 0;
+  margin: 0;
+}

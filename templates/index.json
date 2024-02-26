@@ -189,6 +189,37 @@
         "padding_bottom": 36
       }
     },
+    "custom_new_arrivals_4cajpN": {
+      "type": "custom-new-arrivals",
+      "settings": {
+        "section_heading": "New Arrivals",
+        "section_button_text": "View All",
+        "section_button_link": "#",
+        "featured_desktop_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
+        "featured_mobile_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
+        "featured_pre_heading": "Women's Apparel",
+        "featured_heading": "exclusive Best & New Arrivals collection",
+        "featured_button_text": "Explore",
+        "featured_button_link": "#",
+        "color_scheme": "",
+        "text_alignment": "center",
+        "alignment_position": "align-end justify-center",
+        "slider_autoplay": true,
+        "slide_dots": true,
+        "slide_arrows": true,
+        "infinite_scroll": true,
+        "slider_autoplay_duration": 3,
+        "product_list": [
+          "full-sleeve-high-neck-t-shirt",
+          "full-sleeve-high-neck-t-shirt-1",
+          "men-winter-jacket",
+          "mens-half-sleeve-t-shirt",
+          "mens-winter-hooded-jacket"
+        ],
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "custom_scrolling_banner_4a9hWF": {
       "type": "custom-scrolling-banner",
       "blocks": {
@@ -354,6 +385,16 @@
         "section_heading": "Featured Collection",
         "button_text": "See all Products",
         "button_link": "#",
+        "slider_enable": false,
+        "card_caption": "",
+        "card_heading": "",
+        "card_button_text": "",
+        "card_button_link": "",
+        "color_scheme": "",
+        "text_size": "h2",
+        "text_alignment": "left",
+        "product_text_alignment": "left",
+        "alignment_position": "align-center justify-center",
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -704,6 +745,7 @@
     "hero_banner_slider_bPWhdt",
     "rich_text_coustom_jzdGmd",
     "custom_collections_list_CGbEAG",
+    "custom_new_arrivals_4cajpN",
     "custom_scrolling_banner_4a9hWF",
     "custom_grid_images_drEjEJ",
     "custom_timer_VVfGgL",

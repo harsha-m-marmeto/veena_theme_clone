@@ -70,9 +70,9 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "stacked",
         "media_position": "left",
         "image_zoom": "lightbox",
@@ -116,11 +116,18 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "recently-viewed-products": {
+      "type": "wizaah-recently-viewed-products",
+      "settings": {
+        "title": "Recently viewed"
+      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "170843277157ba55db"
+    "170843277157ba55db",
+    "recently-viewed-products"
   ]
 }

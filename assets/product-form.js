@@ -116,3 +116,36 @@ if (!customElements.get('product-form')) {
     }
   );
 }
+
+let productGrid = document.querySelector('#product-grid');
+  let buttonList = document.querySelectorAll('.layout-button');
+  // console.log(buttonList)
+  buttonList.forEach(each=>{
+    // console.log(each)
+    each.addEventListener('click', event => {
+      event.preventDefault()
+      productGrid.classList.forEach(function(className) {
+        if (className.endsWith('desktop')) {
+          // Replace the class name
+          // console.log(each.dataset.col)
+          productGrid.classList.replace(className, `grid--${each.dataset.col}-col-desktop`);
+        }
+      });
+    })
+  })
+
+  const buttonListMobile = document.querySelectorAll(".layout-button-mobile")
+
+  buttonListMobile.forEach(each=>{
+    // console.log(each)
+    each.addEventListener('click', event => {
+      event.preventDefault()
+      productGrid.classList.forEach(function(className) {
+        if (className.endsWith('tablet-down')) {
+          // Replace the class name
+          // console.log(each.dataset.col)
+          productGrid.classList.replace(className, `grid--${each.dataset.col}-col-tablet-down`);
+        }
+      });
+    })
+  })

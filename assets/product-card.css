@@ -25,8 +25,7 @@
   }
   
   .product-card__quick-view span {
-    padding: 5px 10px;
-    font-size: 14px;
+    font-size: 12px;
     display: none;
   }
   
@@ -38,12 +37,13 @@
   }
   
   .product-card__quick-view-icon{
-    padding: 10px;
     border-radius: 50%;
     background: #000;
   }
-  .product-card__quick-view a{
+  .product-card__quick-view .button{
     text-decoration: none;
+    min-height: 0px;
+    min-width: 0;
   
   }
   

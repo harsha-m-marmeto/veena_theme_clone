@@ -7,8 +7,8 @@
 
   assign new_badge = ''
   for tag in product.tags
-    if tag contains 'New_'
-      assign new_badge = tag | split: '_' | last
+    if tag contains 'new_'
+      assign new_badge = tag | split: '_' | first
       break
     endif
   endfor

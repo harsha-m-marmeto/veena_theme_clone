@@ -93,6 +93,7 @@
         "padding_bottom": 12
       }
     },
+    
     "related-products": {
       "type": "related-products",
       "settings": {

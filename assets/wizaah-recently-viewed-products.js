@@ -39,7 +39,7 @@ wizaah.RecentlyViewedProducts = (function() {
       	var blankDivElement = document.createElement('div');
         blankDivElement.innerHTML = content;
         
-        _this.container.querySelector('.recentlyviewed__container').innerHTML = blankDivEl2ement.querySelector('[data-section-type="wizaah-recently-viewed-products"] .recentlyviewed__container').innerHTML;
+        _this.container.querySelector('.recentlyviewed__container').innerHTML = blankDivElement.querySelector('[data-section-type="wizaah-recently-viewed-products"] .recentlyviewed__container').innerHTML;
 		_this.container.parentNode.style.display = 'block';
         
         _this.initSlider();
@@ -80,6 +80,15 @@ wizaah.RecentlyViewedProducts = (function() {
   RecentlyViewedProducts.prototype.initSlider = function() {
   	//INITIALIZE THE SLIDER HERE
     //PARENT ELEMENT IS :: .mm-recentlyviewed__products
+  // <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+  //   <div class="splide__track">
+  //     <ul class="splide__list">
+  //       <li class="splide__slide">Slide 01</li>
+  //       <li class="splide__slide">Slide 02</li>
+  //       <li class="splide__slide">Slide 03</li>
+  //     </ul>
+  //   </div>
+  // </div>
   }
   
   return RecentlyViewedProducts;

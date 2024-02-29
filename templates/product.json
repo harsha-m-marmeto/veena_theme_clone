@@ -32,6 +32,14 @@
             "swatch_shape": "circle"
           }
         },
+        "inventory_6qDMXE": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
@@ -62,12 +70,14 @@
         "title",
         "price",
         "variant_picker",
+        "inventory_6qDMXE",
         "quantity_selector",
         "buy_buttons",
         "description",
         "share"
       ],
       "settings": {
+        "backgroundCoupn": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, 1) 100%)",
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "small",
@@ -116,18 +126,11 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "recently-viewed-products": {
-      "type": "wizaah-recently-viewed-products",
-      "settings": {
-        "title": "Recently viewed"
-      }
     }
   },
   "order": [
     "main",
     "related-products",
-    "170843277157ba55db",
-    "recently-viewed-products"
+    "170843277157ba55db"
   ]
 }

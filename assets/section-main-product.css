@@ -1506,3 +1506,58 @@ a.product__text {
 .productCardHr hr{
   margin: 0px;
 }
+
+.stockStatusBar {
+  position: relative;
+  display: block;
+  margin: 10px 0 20px;
+  height: 3px;
+  border-radius: 4px;
+  background: rgba(var(--color-foreground),.07);
+  overflow: hidden;
+}
+
+.wbstockinfo-probar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  display: block;
+  transition: width 1.15s ease-in-out;
+  background-color: #008A00;
+}
+
+.btnAndQty{
+  display: flex;
+}
+
+.btn-animateRedP {
+  position: relative;
+  overflow: hidden;
+  /* z-index: 2; */
+}
+
+.btn-animateRedP::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: #fff;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+}
+
+
+.btn-animateRed:hover::before {
+  background-color: black;
+  width: 100%; 
+  transform: translateX(0);
+}
+
+.btn-animateRed:hover span{
+  /* color: #d03c3f; */
+  z-index: 3;
+}

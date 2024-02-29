@@ -160,7 +160,10 @@
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}{{'morestocklocation' }}
+                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}{{' ready to be shipped' }}
+                        <div class='stockStatusBar'>
+                          <span class="wbstockinfo-probar" style="width: 24%"></span>
+                        </div>
                       {%- else -%}
                           {{- 'products.product.inventory_in_stock' | t -}}
                       {%- endif -%}
@@ -423,7 +426,7 @@
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
-            <div>
+            {% comment %} <div>
               {%  if product.selected_or_first_available_variant.metafields.custom.coupon_code.value != blank %}
               <div  id='coupnCode'>
                 <div>Variant specific discount</div>
@@ -455,11 +458,11 @@
                 margin-right: 10px; 
               }
               
-            </style>
+            </style> {% endcomment %}
               
             {%- when 'buy_buttons' -%}
               <div id='targetButton'>
-                <button class='button' id="getElementById" type='button' data-varientid='{{ product.selected_or_first_available_variant.id }}'> add cart </button>
+                <button class='button btn-animateRed' id="getElementById" type='button' data-varientid='{{ product.selected_or_first_available_variant.id }}'> add cart </button>
               </div>
               {% comment %} {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%} {% endcomment %}
             {%- when 'rating' -%}

@@ -49,9 +49,15 @@
                 <p class="cart__login-paragraph">
                   {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
                 </p>
+              {% else %}
+                <div class='h2 cart__login-title'>{{'Have an account?'}}</div>
+                <p class="cart__login-paragraph">
+                  {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
+                </p>
               {%- endif -%}
             </div>
           </div>
+
           {%- if settings.cart_drawer_collection != blank -%}
             <div class="cart-drawer__collection">
               {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}

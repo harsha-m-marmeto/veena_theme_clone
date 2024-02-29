@@ -52,7 +52,7 @@ wizaah.RecentlyViewedProducts = (function() {
      * - Check if the current product already exists, and if it does not, add it at the start
      * - Then, we save the current product into the local storage, by keeping only the 8 most recent
     */    
-    var items = JSON.parse(localStorage.getItem('mmRecentlyViewedProducts') || '[]'),
+    var items = JSON.parse(sessionStorage.getItem('mmRecentlyViewedProducts') || '[]'),
         productId = this.options['productId']; 
 
     if (!items.includes(productId)) {
@@ -60,13 +60,13 @@ wizaah.RecentlyViewedProducts = (function() {
     }
     
     try {
-      localStorage.setItem('mmRecentlyViewedProducts', JSON.stringify(items.slice(0, 8)));
+      sessionStorage.setItem('mmRecentlyViewedProducts', JSON.stringify(items.slice(0, 8)));
     } 
     catch (error) {}
   }
   
   RecentlyViewedProducts.prototype.getSearchQueryString = function() {
-    var items = JSON.parse(localStorage.getItem('mmRecentlyViewedProducts') || '[]');
+    var items = JSON.parse(sessionStorage.getItem('mmRecentlyViewedProducts') || '[]');
 	
     if (items.includes(this.options['productId'])) {
       items.splice(items.indexOf(this.options['productId']), 1);

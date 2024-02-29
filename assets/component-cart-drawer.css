@@ -49,6 +49,7 @@ cart-drawer.is-empty .drawer__inner {
   grid-template-rows: 1fr;
   align-items: center;
   padding: 0;
+  border-top-left-radius: 16px;
 }
 
 cart-drawer.is-empty .drawer__header {
@@ -66,6 +67,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 
 .drawer.active .drawer__inner {
   transform: translateX(0);
+  border-top-left-radius: 16px;
 }
 
 .drawer__header {

@@ -224,3 +224,16 @@ cart-items {
     gap: 1rem;
   }
 }
+
+
+.cart__login-title {
+  margin: 5.5rem 0 .5rem;
+}
+
+.cart__login-paragraph {
+  margin-top: .8rem;
+}
+.content-container-wraper{
+  background-color: #f5f5f5;
+  border-radius: 16px;
+}

@@ -133,6 +133,8 @@
                   {{ form | payment_terms }}
                 {%- endform -%}
               </div>
+            {% comment %} adding horizontal line below the price {% endcomment %}
+            <div class="productCardHr"><hr></div>
             {%- when 'inventory' -%}
               <p
                 class="product__inventory no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -148,7 +150,7 @@
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(238,148,65)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                        {{- 'products.product.inventory_low_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}{{'lowstocklocation' }}
                       {%- else -%}
                         {{- 'products.product.inventory_low_stock' | t -}}
                       {%- endif -%}
@@ -158,7 +160,7 @@
                         <circle cx="7.5" cy="7.5" r="5" stroke="rgb(255, 255, 255)" stroke-width="1" fill="rgb(62,214,96)"/>
                       </svg>
                       {%- if block.settings.show_inventory_quantity -%}
-                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}
+                        {{- 'products.product.inventory_in_stock_show_count' | t: quantity: product.selected_or_first_available_variant.inventory_quantity -}}{{'morestocklocation' }}
                       {%- else -%}
                           {{- 'products.product.inventory_in_stock' | t -}}
                       {%- endif -%}
@@ -421,8 +423,45 @@
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+            <div>
+              {%  if product.selected_or_first_available_variant.metafields.custom.coupon_code.value != blank %}
+              <div  id='coupnCode'>
+                <div>Variant specific discount</div>
+                <div class="buttonAndText">
+                  <div id='copyButtonText'>{{ product.selected_or_first_available_variant.metafields.custom.coupon_code.value }}</div>
+                  <button id='copyButton'>Copy Code</button>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            <style>
+
+              #coupnCode {
+                display: flex; 
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color:#fff;
+                padding:40px;
+                Background:blue;
+              }
+              
+              .buttonAndText {
+                display: flex; 
+                align-items: center;
+              }
+              
+              #copyButtonText {
+                margin-right: 10px; 
+              }
+              
+            </style>
+              
             {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+              <div id='targetButton'>
+                <button class='button' id="getElementById" type='button' data-varientid='{{ product.selected_or_first_available_variant.id }}'> add cart </button>
+              </div>
+              {% comment %} {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%} {% endcomment %}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -685,7 +724,7 @@
   "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
-  "blocks": [
+    "blocks": [
     {
       "type": "@app"
     },
@@ -693,6 +732,7 @@
       "type": "text",
       "name": "t:sections.main-product.blocks.text.name",
       "settings": [
+      
         {
           "type": "inline_richtext",
           "id": "text",
@@ -2035,6 +2075,12 @@
   ],
   "settings": [
     {
+      "type": "color_background",
+      "id": "backgroundCoupn",
+      "label": "coupn code Background",
+      "default": "linear-gradient(#ffffff, #000000)"
+    },
+    {
       "type": "checkbox",
       "id": "enable_sticky_info",
       "default": true,
@@ -2215,3 +2261,32 @@
   ]
 }
 {% endschema %}
+
+
+<script>
+  {% comment %} document.getElementById('getElementById').addEventListener('click',myfun)
+  console.log(document.getElementById('getElementById'))
+  let myfun=()=>{
+  let formData = {
+    'items': [{
+     'id': 36110175633573,
+     'quantity': 2
+     }]
+   };
+   
+   fetch(window.Shopify.routes.root + 'cart/add.js', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(formData)
+   })
+   .then(response => {
+     return response.json();
+   })
+   .catch((error) => {
+     console.error('Error:', error);
+   });
+  }
+    {% endcomment %}
+</script>

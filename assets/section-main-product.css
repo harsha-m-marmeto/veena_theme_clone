@@ -1502,3 +1502,7 @@ a.product__text {
   padding: 15px 0;
   margin: 0;
 }
+
+.productCardHr hr{
+  margin: 0px;
+}

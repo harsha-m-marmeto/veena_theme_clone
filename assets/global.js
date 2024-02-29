@@ -208,7 +208,12 @@ class QuantityInput extends HTMLElement {
     const currentPrice = price.querySelector('.price-item').textContent;
     const finalPrice = value*parseInt(currentPrice.split("Rs. ")[1].split('.')[0].replace(/,/g, ''));
     // console.log((parseInt(currentPrice.split("Rs. ")[1].split('.')[0].replace(/,/g, ''))));
-    addButtonText.textContent = window.variantStrings.addToCart + " Rs. " + finalPrice;
+    // addButtonText.textContent = window.variantStrings.addToCart + " Rs. " + finalPrice;
+
+
+    //for cus button
+    const reqEle=document.getElementById('getElementById');
+    reqEle.setAttribute('data-quantity',value)
   }
 }
 
@@ -1021,6 +1026,9 @@ class VariantSelects extends HTMLElement {
       const selectedSwatchValue = this.querySelector(`[data-selected-swatch-value="${name}"]`);
       if (selectedSwatchValue) selectedSwatchValue.innerHTML = value;
     }
+
+    const reqEle=document.getElementById('getElementById');
+        reqEle.setAttribute('data-varientid',this.currentVariant.id)
   }
 
   updateMedia() {
@@ -1041,6 +1049,7 @@ class VariantSelects extends HTMLElement {
   updateURL() {
     if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+    
   }
 
   updateShareUrl() {
@@ -1058,6 +1067,8 @@ class VariantSelects extends HTMLElement {
       input.value = this.currentVariant.id;
       input.dispatchEvent(new Event('change', { bubbles: true }));
     });
+
+    
   }
 
   updateVariantStatuses() {
@@ -1137,6 +1148,20 @@ class VariantSelects extends HTMLElement {
 
         // change of meta field data dynamically
         document.querySelector("#mytestmteavalue").innerHTML = html.querySelector("#mytestmteavalue").innerHTML;
+
+        // change of coupn code
+        document.querySelector("#coupnCode").innerHTML = html.querySelector("#coupnCode").innerHTML;
+
+        document.getElementById('copyButton').addEventListener('click',()=>{
+          let textValue=html.getElementById('copyButtonText').textContent;
+          navigator.clipboard.writeText( textValue );
+          console.log('event happened');
+        })
+
+        const reqEle=document.getElementById('getElementById');
+        reqEle.setAttribute('data-varientid',this.currentVariant.id)
+        // track
+        
           
         const skuDestination = document.getElementById(`Sku-${this.dataset.section}`);
         const inventorySource = html.getElementById(
@@ -1294,3 +1319,36 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+
+
+if(document.getElementById('targetButton')){
+  let myfun=(e)=>{
+    // console.log(document.getElementById('getElementById').dataset.varientId)
+    let cart= document.querySelector('cart-notification') || document.querySelector('cart-drawer')
+    console.log(cart.getSectionsToRender());
+  let formData = {
+    'items': [{
+     'id': document.getElementById('getElementById').dataset.varientid,
+     'quantity': document.getElementById('getElementById').dataset.quantity
+     }],
+     'sections':cart.getSectionsToRender().map(each=>each.id)
+   };
+   
+   fetch(window.Shopify.routes.root + 'cart/add.js', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(formData)
+   })
+   .then(response => {
+     return response.json();
+   })
+   .then(responseData => cart.renderContents(responseData))
+   .catch((error) => {
+     console.error('Error:', error);
+   });
+  }
+  document.getElementById('targetButton').addEventListener('click',myfun)
+}

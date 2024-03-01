@@ -117,6 +117,7 @@
     "show_cart_note": true,
     "cart_drawer_collection": "bottoms",
     "cart_color_scheme": "scheme-1",
+    "free_shipping": "10000",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",

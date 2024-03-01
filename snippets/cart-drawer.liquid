@@ -54,10 +54,11 @@
                 <p class="cart__login-paragraph">
                   {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
                 </p>
+                {% comment %} {{ cart.total_price | times:100 | divided_by: 200 }} {% endcomment %}
               {%- endif -%}
             </div>
           </div>
-
+          
           {%- if settings.cart_drawer_collection != blank -%}
             <div class="cart-drawer__collection">
               {% render 'card-collection', card_collection: settings.cart_drawer_collection, columns: 1 %}
@@ -65,8 +66,10 @@
           {%- endif -%}
         </div>
       {%- endif -%}
+      
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
+        {% comment %} <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2> {% endcomment %}
+        {%  render 'free-shipping'  %}
         <button
           class="drawer__close"
           type="button"
@@ -91,7 +94,7 @@
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
-                  <thead role="rowgroup">
+                  {% comment %} <thead role="rowgroup">
                     <tr role="row">
                       <th id="CartDrawer-ColumnProductImage" role="columnheader">
                         <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
@@ -116,7 +119,7 @@
                         <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
                       </th>
                     </tr>
-                  </thead>
+                  </thead> {% endcomment %}
 
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
@@ -182,7 +185,7 @@
                                   </div>
                                 {%- endfor -%}
                               {%- endif -%}
-
+                              {{ 2100 | times:100 | divided_by: 200 }}
                               {%- for property in item.properties -%}
                                 {%- assign property_first_char = property.first | slice: 0 -%}
                                 {%- if property.last != blank and property_first_char != '_' -%}
@@ -509,7 +512,7 @@
             {%- endif -%}
           </small>
         </div>
-
+        
         <!-- CTAs -->
 
         <div class="cart__ctas" {{ block.shopify_attributes }}>

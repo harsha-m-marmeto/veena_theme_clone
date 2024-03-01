@@ -116,8 +116,15 @@ cart-items .title-wrapper-with-link {
 }
 
 .cart-item cart-remove-button {
-  display: flex;
-  margin-left: 1rem;
+  margin: 0;
+  line-height: 0;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #D03C3F;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 750px) and (max-width: 989px) {
@@ -151,8 +158,9 @@ cart-remove-button .button:not([disabled]):hover {
 }
 
 cart-remove-button .icon-remove {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.6rem;
+  width: 1.6rem;
+  fill: #fff;
 }
 
 .cart-item .loading__spinner {
@@ -255,6 +263,7 @@ cart-remove-button .icon-remove {
 
   .cart-item__quantity-wrapper {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .cart-item__totals {

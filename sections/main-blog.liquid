@@ -19,8 +19,18 @@
 {%- paginate blog.articles by 6 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
     <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
+      {{ blog.title | escape }} {{ 'theme article list' }}
     </h1>
+
+    <div class='titleCard'>
+      {% comment %} <div class='h3'>Unveiling Perspectives: Navigate the Blogosphere with Fresh Insights</div> {% endcomment %}
+      {% for tag in blog.all_tags %}
+        {% assign last_word = tag | split: '_' | last %}
+        {% if tag contains 'categories_' and last_word %}
+          <a href="/blogs/{{ blog.handle }}/tagged/{{ tag |  handleize }}">{{ last_word }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- for article in blog.articles -%}
@@ -31,6 +41,9 @@
             style="--animation-order: {{ forloop.index }};"
           {% endif %}
         >
+
+         
+
           {%- render 'article-card',
             article: article,
             media_height: section.settings.image_height,

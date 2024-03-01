@@ -17,6 +17,7 @@ cart-items .title-wrapper-with-link {
 
 .cart-item__quantity-wrapper {
   display: flex;
+  justify-content: space-between;
 }
 
 .cart-item__totals {
@@ -263,7 +264,7 @@ cart-remove-button .icon-remove {
 
   .cart-item__quantity-wrapper {
     flex-wrap: wrap;
-    justify-content: space-between;
+    
   }
 
   .cart-item__totals {

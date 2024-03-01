@@ -16,7 +16,7 @@ Uses : {%  render 'free-shipping'  %}
       <div class="shipping-bar__title font-bold text-md cart-drawer__black">Free shipping</div>
     {% else %}
       <div class="shipping-bar__message cart-drawer__black h6">
-        <h2 class='cart-drawer__black'>Shopping cart</h2>
+        <h2 class='cart-drawer__black'>Shopping cart ({{ cart.item_count }})</h2>
         <p>
           Spent more <strong>{{ change | times: 100 | money }}</strong> extra for free shipping!
         </p>

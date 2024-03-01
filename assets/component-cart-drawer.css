@@ -116,6 +116,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 .drawer__footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.2);
   padding: 1.5rem 0;
+  margin: 0 20px;
 }
 
 cart-drawer-items.is-empty + .drawer__footer {
@@ -414,4 +415,11 @@ cart-drawer-items::-webkit-scrollbar-track-piece {
   .cart-drawer .cart-item__error {
     margin-left: 0;
   }
+}
+
+
+#CartDrawer .cart__ctas a.btn-block {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }

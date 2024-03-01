@@ -15,6 +15,7 @@
 .customer > h1,
 .customer__title {
   margin-top: 0;
+  /* font-size: 38px; */
 }
 
 .customer form {
@@ -23,6 +24,10 @@
 
 .customer button {
   margin: 4rem 0 1.5rem;
+}
+
+.customer .field input {
+  background-color: transparent;
 }
 
 .customer ul {
@@ -753,3 +758,93 @@ li[data-address] > h2 {
 .addresses form > div:nth-of-type(7) + div[id] {
   margin-top: 1.5rem;
 }
+
+
+.myCardstyle {
+  border-radius: 16px;
+  background: #f5f5f5;
+  margin-top: 15px !important;
+  padding: 15px 40px!important;
+}
+
+.login a[href="#recover"] {
+  display: block;
+  text-align: left;
+  text-decoration: none;
+}
+
+.logInButton{
+  width: 100%;
+}
+
+.email_title:before{
+  content: "";
+  height: 1px;
+  width: 45%;
+  background: #00000033;
+  position: absolute;
+  top: 50%;
+  left:0px;
+}
+
+.email_title:after{
+  content: "";
+  height: 1px;
+  width: 45%;
+  background: #00000033;
+  position: absolute;
+  top: 50%;
+  right:0px;
+}
+
+.email_title {
+  position: relative;
+}
+
+.pwd_or_email-wrapper {
+  width: 100%;
+}
+
+button.create-account{
+  width: 100%; 
+  background-color: transparent;
+  border: solid 1px #000000;
+  position: relative;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+button.create-account::before{
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+  transform: translateX(-100%);
+}
+
+button.create-account:hover::before{
+  background-color: #d03c3f;
+  width: 100%; 
+  transform: translateX(0);
+}
+
+button.create-account:hover a{
+  color: #ffffff;
+}
+
+button.create-account a{
+  z-index: 3;
+  /* color: #ffffff; */
+}
+
+.create-account a{
+  color: #000000;
+  text-decoration: none; 
+}
+
+/* .create-account{
+  
+} */

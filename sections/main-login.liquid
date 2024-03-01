@@ -13,8 +13,10 @@
     }
   }
 {%- endstyle -%}
-
-<div class="customer login section-{{ section.id }}-padding">
+<div class='breadcrumb p'>
+  {% render 'breadcrumbs' %}
+</div>
+<div class="customer login section-{{ section.id }}-padding myCardstyle">
   <h1 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
   </h1>
@@ -137,13 +139,19 @@
         </a>
       {%- endif -%}
 
-      <button>
+      <button class='logInButton'>
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
+      <div class="pwd_or_email-wrapper">
+        <p class="email_title">Or</p>
+      </div>
+
+      <button class='create-account'>
       <a href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}
       </a>
+    </button>
     {%- endform -%}
   </div>
 

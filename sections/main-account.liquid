@@ -12,10 +12,68 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+
+  /*  */
+  .account-page-right-block {
+    padding: 35px 28px 33px;
+    width:70vw;
+}
+
+.account-page-title {
+    font-size: calc(22px + (32 - 22) * (100vw - 375px) / (1440 - 375));
+    font-weight: 700;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-bottom: 18px;
+}
+
+.account-page-title-logo {
+    margin-right: 6px;
+    margin-top: 2px;
+}
+
+.account-page-subtitle {
+    margin-top: 0;
+    color: #000;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-transform: uppercase;
+}
+
+.account-page-subtitle-block {
+    border-radius: 8px;
+    border: 1px solid #d0bbba;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+}
+
+.account-info-item a{
+  text-decoration: none;
+  }
+
+  .account-address-list-block {
+    border-radius: 8px;
+    border: 1px solid #d0bbba;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+}
+
+ul.account-address-list {
+    padding-left: 0;
+    list-style: none;
+    margin:0px;
+}
+
+.acoount-page-my{
+  display:flex;
+}
 {%- endstyle -%}
 
 <div class="customer account section-{{ section.id }}-padding">
-  <div>
+  {% comment %} <div>
     <h1 class="customer__title">{{ 'customer.account.title' | t }}</h1>
     <a href="{{ routes.account_logout_url }}">
       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 18 19">
@@ -23,9 +81,48 @@
       </svg>
       {{ 'customer.log_out' | t }}
     </a>
+  </div> {% endcomment %}
+  <div class='acoount-page-my'>
+    {% render 'account-menu' %}
+    <div>
+      <div class="account-page-right-block">
+        <header class="account-page-masthead">
+          <h1 class="account-page-title">
+            <span class="account-page-title-logo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 14 18" fill="none" class="svg-account-logo">
+                <path d="M7.13832 7.73089C9.35049 7.73089 11.1438 5.9983 11.1438 3.86105C11.1438 1.7238 9.35049 -0.00878906 7.13832 -0.00878906C4.92614 -0.00878906 3.13281 1.7238 3.13281 3.86105C3.13281 5.9983 4.92614 7.73089 7.13832 7.73089Z" fill="black"></path>
+                <path d="M7.13851 9.44238C3.48834 9.44238 0.529297 12.2157 0.529297 15.637C0.529297 16.4923 1.22266 17.1856 2.07796 17.1856H12.1991C13.0543 17.1856 13.7478 16.4923 13.7478 15.637C13.7478 12.2157 10.7887 9.44238 7.13851 9.44238Z" fill="black"></path>
+              </svg>
+            </span>
+            My Account
+          </h1>
+          <h4 class="account-page-subtitle account-page-subtitle-name">
+            {{ customer.name }}
+          </h4>
+        </header>
+        <div class="">
+          <div class="account-page-subtitle-block">
+            <p class="account-info-item">
+              <a href="mailto:harshamacharla23@gmail.com" class="account-details">
+                {{customer.email}}
+              </a>
+            </p>
+            <p class="account-details">
+              {{ customer.phone }}
+            </p>
+          </div>
+          <div class="account-address-list-block"> 
+            <ul class="account-address-list">
+              <li class="account-details customer-email">{{customer.email}}</li>
+              <li class="account-details country">{{customer.default_address.country}}</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
   </div>
-
-  <div>
+  {% comment %} <div>
     <div>
       <h2>{{ 'customer.orders.title' | t }}</h2>
 
@@ -147,13 +244,18 @@
         {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
       </a>
     </div>
-  </div>
+  </div> {% endcomment %}
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-account.name",
   "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    },    
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

@@ -13,8 +13,10 @@
     }
   }
 {%- endstyle -%}
-
-<div class="customer register section-{{ section.id }}-padding">
+<div class='breadcrumb p'>
+  {% render 'breadcrumbs' %}
+</div>
+<div class="customer register section-{{ section.id }}-padding myCardstyle">
   <svg style="display: none">
     <symbol id="icon-error" viewBox="0 0 13 13">
       <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
@@ -49,6 +51,9 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
+    <label for="RegisterForm-FirstName" class='label-name'>
+      <span>{{ 'customer.register.first_name' | t }}</span>
+    </label>
     <div class="field">
       <input
         type="text"
@@ -64,6 +69,9 @@
         {{ 'customer.register.first_name' | t }}
       </label>
     </div>
+    <label for="RegisterForm-FirstName" class='label-name'>
+      <span>{{ 'customer.register.last_name' | t }}</span>
+    </label>
     <div class="field">
       <input
         type="text"
@@ -79,6 +87,9 @@
         {{ 'customer.register.last_name' | t }}
       </label>
     </div>
+    <label for="RegisterForm-FirstName" class='label-name'>
+      <span>{{ 'customer.register.email' | t }}</span>
+    </label>
     <div class="field">
       <input
         type="email"
@@ -110,6 +121,9 @@
         {{ form.errors.messages.email }}.
       </span>
     {%- endif -%}
+    <label for="RegisterForm-FirstName" class='label-name'>
+      <span>{{ 'customer.register.password' | t }}</span>
+    </label>
     <div class="field">
       <input
         type="password"
@@ -135,9 +149,12 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
-    <button>
-      {{ 'customer.register.submit' | t }}
+    <button  class='register-account'>
+      <span>{{ 'customer.register.submit' | t }}</span>
     </button>
+    <div>
+      Have an account? <a href='/account/login'>Log in </a> to checkout faster.
+    </div>
   {%- endform -%}
 </div>
 

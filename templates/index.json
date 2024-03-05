@@ -62,7 +62,7 @@
         "enable_dots": true,
         "enable_arrows": true,
         "slide_animation": "fade",
-        "padding_top": 0,
+        "padding_top": 20,
         "padding_bottom": 0
       }
     },
@@ -195,6 +195,8 @@
         "section_heading": "New Arrivals",
         "section_button_text": "View All",
         "section_button_link": "#",
+        "button_bgr": "#DD1D1D",
+        "button_colorr": "#ffffff",
         "featured_desktop_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
         "featured_mobile_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
         "featured_pre_heading": "Women's Apparel",

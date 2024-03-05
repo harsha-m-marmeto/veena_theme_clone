@@ -114,6 +114,7 @@ ul.account-address-list {
           <div class="account-address-list-block"> 
             <ul class="account-address-list">
               <li class="account-details customer-email">{{customer.email}}</li>
+              <li class="account-details country">{{customer.default_address.address1}}</li>
               <li class="account-details country">{{customer.default_address.country}}</li>
             </ul>
           </div>
@@ -251,11 +252,6 @@ ul.account-address-list {
 {
   "name": "t:sections.main-account.name",
   "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Menu"
-    },    
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

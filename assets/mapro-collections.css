@@ -1,0 +1,40 @@
+.tab__headings {
+	display: flex;
+	align-items: center;
+	background: #f5f8fa;
+	border-radius: 2rem;
+	max-width: 95rem;
+	margin: 0 auto 3.5rem;
+	justify-content: center;
+	list-style: none;
+}
+
+.list-item.active{
+	background: #e1e6eb;
+	border-radius: 2rem;
+	color: #111314;
+}
+
+.list-item{
+	width: 20%;
+	cursor: pointer;
+	text-align: center;
+	/* font-size: 1.2rem; */
+	letter-spacing: .065rem;
+	padding: 1.2rem;
+	transition: background .2s ease;
+	color: #565d66;
+}
+
+.fresh-source__content{
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+}
+
+.fresh-source__content.active{
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+	transition: all .35s ease;
+}

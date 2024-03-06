@@ -1,14 +1,39 @@
 {
-    "sections": {
-      "main": {
-        "type": "mapro-collections",
-        "settings": {
-          "padding_top": 36,
-          "padding_bottom": 36
+  "sections": {
+    "main": {
+      "type": "mapro-collections",
+      "blocks": {
+        "block_wAhyHw": {
+          "type": "block",
+          "settings": {
+            "collection_title": "one",
+            "collection": "bottoms"
+          }
+        },
+        "block_aye9Md": {
+          "type": "block",
+          "settings": {
+            "collection_title": "two",
+            "collection": "shirts"
+          }
         }
+      },
+      "block_order": [
+        "block_wAhyHw",
+        "block_aye9Md"
+      ],
+      "settings": {
+        "section_title": "title",
+        "enable_autoplay": true,
+        "enable_dots": true,
+        "enable_arrows": false,
+        "slide_animation": "slide",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
-    },
-    "order": [
-      "main"
-    ]
+    }
+  },
+  "order": [
+    "main"
+  ]
 }

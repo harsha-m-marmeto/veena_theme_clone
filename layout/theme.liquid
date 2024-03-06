@@ -283,7 +283,7 @@
       }
     </script>
   </head>
-
+  {% comment %} {% section 'custom-header' %} {% endcomment %}
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}

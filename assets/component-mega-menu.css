@@ -85,3 +85,16 @@
 .mega-menu__list--condensed .mega-menu__link {
   font-weight: normal;
 }
+
+.mega-menu__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+}
+.mega-menu__list {
+  margin: 0;
+}
+.mega-menu-image {
+  max-height: 250px;
+  max-width: 250px;
+}

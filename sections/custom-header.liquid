@@ -1,0 +1,119 @@
+{% style %}
+.section-header .page-width {
+    display: grid;
+    grid-template-columns: 0.8fr 0.5fr 0.5fr;
+    align-items: center;
+    width: 100%;
+    padding: 0 4rem;
+    
+}
+
+.logo-container img{
+    width:40%
+}
+
+.custom-navigation ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0px;
+}
+
+.links-container li a{
+    text-decoration: none;
+    padding: 2px;
+}
+
+{% endstyle %}
+<header class='section-header'>
+    <div class='page-width'>
+        <nav class="custom-navigation">
+            <ul class='links-container'>
+                {%  for link in section.settings.navlist.links   %}
+                    <li>
+                        <details>
+                            <summary>
+                                <span> {{ link.title }} </span>
+                            </summary>
+                            <div>
+                                <ul>
+                                    {%- for childlink in link.links -%}
+                                        <li>
+                                            <a href='{{ childlink.url }}'> {{ childlink.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </details>
+                        {% comment %} <a href='{{ link.url }}'></a> {% endcomment %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        {% if section.settings.logo != blank   %}
+        <div class='logo-container'>
+            <img src='{{ section.settings.logo | img_url}}' alt='brand-logo'>
+        </div>
+        {% else %}
+        <span class='h2'>{{ shop.name }}</span>
+        {%  endif %}
+        <div class='custom-nav-icons'>
+            icons
+        </div>
+    </div>
+</header>
+
+{% schema %}
+{
+  "name": "My New Section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Logo",
+      "id": "logo"
+    },
+    {
+      "type": "link_list",
+      "label": "Navlist",
+      "id": "navlist"
+    },
+    {
+      "type": "checkbox",
+      "label": "show icons",
+      "id": "show_icons"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega Menu",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Desktop Image",
+          "id": "desktop_image"
+        },
+        {
+          "type": "text",
+          "label": "link title",
+          "id": "link_title",
+          "info": "Mega menu is applied for this link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "My New Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

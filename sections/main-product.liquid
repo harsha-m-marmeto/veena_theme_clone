@@ -95,6 +95,11 @@
               >
                 {{- block.settings.text -}} jkhkjhfhgdssdfgf
               </p> {% endcomment %}
+            <pincode-validator>
+                <input type="text" id="pincode-input" placeholder="Enter Pin Code">
+                <button>Submit</button>
+                <p id="result"></p>
+            </pincode-validator>
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>

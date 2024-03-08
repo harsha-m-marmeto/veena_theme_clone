@@ -135,6 +135,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer summary.menu-drawer__menu-item {
   padding-right: 5.2rem;
+  font-size: var(--font-size-menu-large);
 }
 
 .no-js .menu-drawer__menu-item .icon-caret {

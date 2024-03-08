@@ -95,11 +95,10 @@
               >
                 {{- block.settings.text -}} jkhkjhfhgdssdfgf
               </p> {% endcomment %}
-            {% comment %} <pincode-validator>
-                <input type="text" id="pincode-input" placeholder="Enter Pin Code">
-                <button>Submit</button>
-                <p id="result"></p>
-            </pincode-validator> {% endcomment %}
+              
+              
+              
+
             {%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
@@ -404,7 +403,12 @@
                   </volume-pricing>
                 {%- endif -%}
               </div>
-            {%- when 'popup' -%}
+
+              {%- when 'pincode_checker' -%}
+                {% render 'pincode'  %}
+              
+
+              {%- when 'popup' -%}
               <modal-opener
                 class="product-popup-modal__opener no-js-hidden quick-add-hidden"
                 data-modal="#PopupModal-{{ block.id }}"
@@ -469,7 +473,7 @@
               <div id='targetButton'>
                 <button class='button btn-animateRed' id="getElementById" type='button' data-varientid='{{ product.selected_or_first_available_variant.id }}'> add cart </button>
               </div>
-              {% comment %} {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%} {% endcomment %}
+              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -2079,8 +2083,33 @@
         }
         
       ]
+    },
+    {
+      "type": "pincode_checker",
+      "name":"Pincode checker",
+      "settings":[
+        {
+          "type": "text",
+          "id":"button_text",
+          "label":"Button label",
+          "default": "Check For Delivery"
+        },
+         {
+          "type": "text",
+          "id":"pincode_available_message",
+          "label":"Pincode available message",
+          "default": "We Deliver to this Location"
+        },
+         {
+          "type": "text",
+          "id":"pincode_unavailable_message",
+          "label":"Pincode unavailable message",
+          "default": "Currently Unavailable in this Location"
+        }
+      ]
     }
   ],
+  
   "settings": [
     {
       "type": "color_background",
@@ -2242,6 +2271,7 @@
       "default": false,
       "label": "t:sections.main-product.settings.enable_video_looping.label"
     },
+    
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

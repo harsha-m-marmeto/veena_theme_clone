@@ -73,7 +73,7 @@ class PincodeChecker extends HTMLElement {
     fetchSheetsData() {
         if (this.data) return this.data;
 
-        const API_KEY = 'AIzaSyBBoDc5yP9MNwm3IrJBKd_71m_kqbOlSJE';
+        const API_KEY = 'AIzaSyD5Ejlgmkn0ZrE_JAYCigk_rl3KiK4_rjo';
         const SPREADSHEET_ID = '1uXPz0o9CgxNFde3zBPJyXJ9gVpsIV58Y6VsAvygPnHM';
         const RANGE = 'Sheet1';
         const BASE_URL = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}`;

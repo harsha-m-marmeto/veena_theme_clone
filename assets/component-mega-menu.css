@@ -88,7 +88,7 @@
 
 .mega-menu__content {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 3rem 4rem;
 }
 .mega-menu__list {
@@ -97,4 +97,14 @@
 .mega-menu-image {
   max-height: 250px;
   max-width: 250px;
+  border-radius: 16px;
+}
+
+.vanity-header{
+  background-color: #e3dbd3;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  /* height: 5.6rem; */
+  padding: 1rem 5.3rem 1rem 5.8rem;
+  width: 100%;
 }

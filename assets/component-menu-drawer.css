@@ -272,3 +272,10 @@ details[open].menu-opening > .menu-drawer__submenu {
     transition: none !important;
   }
 }
+
+.mega-menu-image-mobile{
+  margin-left: 12%;
+  max-height: 250px;
+  max-width: 250px;
+  border-radius: 16px;
+}

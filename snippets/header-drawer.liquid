@@ -107,7 +107,7 @@
                         </div>
                         {% for block in section.blocks %}
                           {% if block.settings.text == link.title %}
-                          <img class='mega-menu-image {% if block.settings.vertical_alignment == "Left" %} align-left {% else %} align-right {% endif %}' src="{{ block.settings.desktop_image | image_url }}" width="250" height="auto">
+                          <img class='mega-menu-image-mobile' src="{{ block.settings.desktop_image | image_url }}" width="250" height="auto">
                           {% endif %}
                         {% endfor %}
                       </div>

@@ -27,11 +27,23 @@
                 </span>
                 {% render 'icon-caret' %}
               </summary>
+              
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                class="mega-menu__content  color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+              <div class="static-container">
+                  <a href="#" class="first">Interest</a>
+                  <a href="#">Oily Skin</a>
+                  <a href="#">Pigmentation</a>
+                  <a href="#">Coloured Hair Care</a>
+                  <a href="#">Acene Porne Skin</a>
+                  <a href="#">Frizzy Hair</a>
+                  <a href="#">Underarm Care</a>
+                  <a href="#">Multi use Make Up</a>
+                  <a href="#">Hairfall</a>
+              </div>
                 <ul
                   class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
@@ -75,7 +87,7 @@
                 {% comment %} <img class='mega-menu-image' src="{{ link.title | append: '.jpg' | file_url  }}" width="100" height="100" />  {% endcomment %}
                 {% for block in section.blocks %}
                   {% if block.settings.text == link.title %}
-                    <img class='mega-menu-image ' src="{{ block.settings.desktop_image | image_url  }}" width="250" height="auto">
+                  <img class='mega-menu-image {% if block.settings.vertical_alignment == "Left" %} align-left {% else %} align-right {% endif %}' src="{{ block.settings.desktop_image | image_url }}" width="250" height="auto">
                   {% endif %}
                 {% endfor %}
               </div>

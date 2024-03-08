@@ -84,6 +84,7 @@
 
 .mega-menu__list--condensed .mega-menu__link {
   font-weight: normal;
+  color: black;
 }
 
 .mega-menu__content {
@@ -107,4 +108,35 @@
   /* height: 5.6rem; */
   padding: 1rem 5.3rem 1rem 5.8rem;
   width: 100%;
+}
+
+.align-left{
+  order: -1;
+  justify-content: flex-start;
+}
+
+.align-right{
+  order: 0;
+  margin-left: 40%;
+}
+
+.static-container{
+  background-color: #a67774;
+  margin-right:3.9rem;
+  margin-left:3.9rem;
+  padding: 1.55rem 1.6rem 2.7rem 1.6rem;
+  min-width: 16.9rem;
+  color: #ffffff;
+}
+
+.static-container a{
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
+
+.static-container .first{
+  color: #ffffff;
+  text-decoration: underline;
+  display: block;
 }

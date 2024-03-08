@@ -32,13 +32,35 @@
         "megamenu_89nd9b": {
           "type": "megamenu",
           "settings": {
-            "text": "Makeup",
-            "desktop_image": "shopify:\/\/shop_images\/SALE.jpg"
+            "text": "MAKEUP",
+            "desktop_image": "shopify:\/\/shop_images\/6f6dce855cd110bb5815d390945d8afe.png",
+            "mobile_image": "shopify:\/\/shop_images\/6f6dce855cd110bb5815d390945d8afe.png",
+            "vertical_alignment": "Right"
+          }
+        },
+        "megamenu_b4WddJ": {
+          "type": "megamenu",
+          "settings": {
+            "text": "SKIN CARE",
+            "desktop_image": "shopify:\/\/shop_images\/SALE.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/SALE.jpg",
+            "vertical_alignment": "Left"
+          }
+        },
+        "megamenu_4Uf4c4": {
+          "type": "megamenu",
+          "settings": {
+            "text": "HAIR CARE",
+            "desktop_image": "shopify:\/\/shop_images\/1080x1080_600x600_94a93c07-8f8a-4e8c-8fc2-7697bd92e91c.webp",
+            "mobile_image": "shopify:\/\/shop_images\/concern-banner_600x600_f6ebd815-8430-45f1-b807-9a531abd8a81.webp",
+            "vertical_alignment": "Right"
           }
         }
       },
       "block_order": [
-        "megamenu_89nd9b"
+        "megamenu_89nd9b",
+        "megamenu_b4WddJ",
+        "megamenu_4Uf4c4"
       ],
       "settings": {
         "logo_position": "top-left",

@@ -1,4 +1,5 @@
 {% comment %} {{ 'custom-image-grid.css' |  asset_url |  stylesheet_tag }}  {% endcomment %}
+<script src="{{ 'myCustom-bundle.js' | asset_url }}" defer="defer"></script>
 
 {% style %}
     .padding-{{ section.id }} {
@@ -15,34 +16,57 @@
      .custom-bundle{
       display:flex;
       justify-content:center;
-      align-items:center;
+      /* align-items:center; */
      }
      .custom-bundle-container{
       border: 1px solid green;
       padding: 30px;
-      box-sizing:border-box;
       width: 80%;
      }
      .custom-bundle_add-icon{
       display:flex;
       flex-direction:column;
       justify-content:center;
-      align-items:center;
+      /* align-items:center; */
      }
+
+     .check-box{
+      position:relative;
+     }
+
+     .check-box input{
+        position: absolute;
+        top: 0.5%;
+        left: 80%;
+        z-index: 1;
+    }
+
+    button.add-cart-btn{
+      height:40px;
+    }
   {% endstyle %}
+  {{ product.selected_or_first_available_variant.option2 }}
   {% if product.metafields.custom.bundle_products != blank %}
       <div class=" padding-{{ section.id }}">
         <div class="section-title center h2">{{ section.settings.section_title }}</div>
           <div class="page-width custom-bundle">
               <div class="custom-bundle-container custom-border-radius grid grid--2-col grid--4-col-desktop">
                   {% for product in product.metafields.custom.bundle_products.value %}
+                    <div class="check-box grid__item">
+                      <input type="checkbox" data-product-id='{{ product.variants.first.id }}'>
                       {% render 'product-card', product: product, section_id: section.id %}
+                    </div>
                       <div class = "custom-bundle_add-icon">
                         {% unless forloop.last %}
                             <div>'+'</div>
                         {% endunless %}
                       </div>
-                  {% endfor %} 
+                  {% endfor %}
+                  {% comment %} <button class="add-cart-btn button" id="budleSection">add to cart</button>  {% endcomment %}
+                  <form method="post" action="/cart/add">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                      <button class="add-cart-btn button" id="budleSection">add to cart</button> 
+                  </form>
               </div>
           </div>
       </div>

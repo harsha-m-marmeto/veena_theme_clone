@@ -195,7 +195,7 @@
         "section_heading": "New Arrivals",
         "section_button_text": "View All",
         "section_button_link": "#",
-        "button_bgr": "#DD1D1D",
+        "button_bgr": "#dd1d1d",
         "button_colorr": "#ffffff",
         "featured_desktop_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
         "featured_mobile_image": "shopify:\/\/shop_images\/1_c1c7fe9b-15a8-43a4-8d1a-c53818eda179.jpg",
@@ -741,6 +741,87 @@
         "padding_top": 16,
         "padding_bottom": 16
       }
+    },
+    "timeline_clone_eKtPer": {
+      "type": "Timeline-clone",
+      "blocks": {
+        "timeline_item_NherkQ": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2011",
+            "timeline_text": "Forays into Home Appliances Business",
+            "timeline_description": "Orient Electric ventured into the home appliances market in 2011 with a wide range of products including Air Coolers, Water Heaters, Juicer Mixer Grinders, Mixer Grinders, Toasters, Electric Kettles, Coolers, Induction Cookers, Rice Cookers and Electric Irons. Orient Electric's Home Appliances division today enjoys a pan India presence with a strong distribution network."
+          }
+        },
+        "timeline_item_DkTzEi": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2014",
+            "timeline_text": "NEW BRAND IDENTITY UNVEILED",
+            "timeline_description": "The company changed its brand name and identity from 'Orient Electricals' to 'Orient Electric' and consolidated its business verticals of Fans, Lighting and Home Appliances. The brand revamp was done with an aim to establish the company's identity as a one-stop home solutions provider with the next generation customers who make informed buying decisions. As part of the brand repositioning plan, the company also launched a new unified communications campaign 'Switch to smart' and its new logo in the vibrant colour 'orange'. The year also marked the launch of BLDC fans and Orient Electric's entry into LED lighting solutions."
+          }
+        },
+        "timeline_item_AGTbNg": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2015",
+            "timeline_text": "VENTURES INTO SWITCHGEAR BUSINESS",
+            "timeline_description": "Continuing with its efforts to position itself as one-stop solution provider of lifestyle electrical solutions, Orient Electric forayed into the Switchgear market. Orient Electric's smart range of energy-efficient LV Switchgear products includes MCB (Miniature Circuit Breakers), RCCB (Residual Current Circuit Breakers), Isolators and Distribution Boards. The company manufactures the Switchgear range at its state of the art manufacturing facility located at Noida in the state of Uttar Pradesh."
+          }
+        },
+        "timeline_item_iJh3Dy": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2016",
+            "timeline_text": "RECEIVES BEE STAR RATING FOR LED LAMPS",
+            "timeline_description": "On January 16, 2019, Orient Electric announced the national launch of India's first smart ceiling fan Aeroslim which set new standards in the segment with its IoT & voice control, one-of-a-kind slim cylindrical design and energy-efficient inverter motor."
+          }
+        },
+        "timeline_item_4whHFt": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2017",
+            "timeline_text": "ORIENT ELECTRIC DEMERGES AS A SEPARATE ENTITY",
+            "timeline_description": "Orient Electric gets demerged from Orient Paper & Industries Limited (OPIL) into a separate listed entity, Orient Electric Limited (OEL). The Scheme of demerger was approved by the Kolkata Bench of the National Company Law Tribunal on November 9, 2017."
+          }
+        },
+        "timeline_item_cakYeY": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2018",
+            "timeline_text": "ORIENT ELECTRIC GETS LISTED ON THE STOCK EXCHANGES",
+            "timeline_description": "On 14th May 2018, Orient Electric Limited got listed on the Bombay Stock Exchange (BSE) and the National Stock Exchange (NSE). Orient Electric Ltd. stock trades under the code \"541301\" on BSE and under the code \"ORIENTELEC\" on NSE."
+          }
+        },
+        "timeline_item_NAhM4B": {
+          "type": "timeline_item",
+          "settings": {
+            "timeline_year": "2019",
+            "timeline_text": "Orient Electric makes its way into the list of 2020 Fortune India 500 - India's Largest Corporations. The recognition validates the robustness of company's business model and is reflective of its ambitious growth journey as a standalone company.",
+            "timeline_description": "Orient Electric makes its way into the list of 2020 Fortune India 500 - India's Largest Corporations. The recognition validates the robustness of company's business model and is reflective of its ambitious growth journey as a standalone company."
+          }
+        }
+      },
+      "block_order": [
+        "timeline_item_NherkQ",
+        "timeline_item_DkTzEi",
+        "timeline_item_AGTbNg",
+        "timeline_item_iJh3Dy",
+        "timeline_item_4whHFt",
+        "timeline_item_cakYeY",
+        "timeline_item_NAhM4B"
+      ],
+      "settings": {
+        "enable_autoplay": false,
+        "enable_dots": false,
+        "rewind_slides": false,
+        "enable_arrows": true,
+        "slide_animation": "loop",
+        "slides_per_page": 1,
+        "slides_per_move": 1,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
@@ -759,6 +840,7 @@
     "custom_image_with_text_yFrcf6",
     "custom_testimonial_Dc966a",
     "articles_slider_3MYKaF",
-    "custom_faq_section_GdBFQh"
+    "custom_faq_section_GdBFQh",
+    "timeline_clone_eKtPer"
   ]
 }

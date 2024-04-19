@@ -207,7 +207,7 @@
         "text_alignment": "center",
         "alignment_position": "align-end justify-center",
         "slider_autoplay": true,
-        "slide_dots": true,
+        "slide_dots": false,
         "slide_arrows": true,
         "infinite_scroll": true,
         "slider_autoplay_duration": 3,

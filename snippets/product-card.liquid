@@ -157,7 +157,7 @@
       <input
         type="hidden"
         name="id"
-        value="{{ current_varient }}"
+        value="{{ current_varient.id }}"
         {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
           disabled
         {% endif %}
@@ -202,6 +202,7 @@
         {%- endif -%}
       </div>
     {%- endform -%}
+    -->
   </div>
 
   <!--

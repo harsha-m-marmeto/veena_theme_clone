@@ -58,7 +58,7 @@
         "slide_E4fRMG"
       ],
       "settings": {
-        "enable_autoplay": true,
+        "enable_autoplay": false,
         "enable_dots": true,
         "enable_arrows": true,
         "slide_animation": "fade",

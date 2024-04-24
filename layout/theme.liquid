@@ -254,6 +254,8 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'marmeto-filter.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'marmeto-filter.js' | asset_url }}" defer="defer"></script>
 
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -293,7 +295,7 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {{ 'product-card.css' | asset_url |stylesheet_tag }}
+    {{ 'product-card.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'product.js' | asset_url }}" defer></script>
     {% sections 'header-group' %}
 
